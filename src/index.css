@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Font Classes */
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.text-elegant {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.text-clean {
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
+.text-modern {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+@keyframes energyWave {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Animation Durations */
+.duration-2000 {
+  animation-duration: 2s;
+}
+
+.duration-1500 {
+  animation-duration: 1.5s;
+}
+
+/* Custom Utilities */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.bg-white\/20 {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.border-blue-300\/30 {
+  border-color: rgba(147, 197, 253, 0.3);
+}
+
+.bg-red-500\/20 {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.border-red-400\/30 {
+  border-color: rgba(248, 113, 113, 0.3);
+}
