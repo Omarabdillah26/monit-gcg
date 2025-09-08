@@ -10,6 +10,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
   const [dropdownValues, setDropdownValues] = useState<Record<string, string>>(
     {}
   );
+  const [uploadedFiles, setUploadedFiles] = useState<Record<string, File | null>>({});
 
   const toggleRow = (rowId: string) => {
     const newExpanded = new Set(expandedRows);
@@ -54,6 +55,13 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
 
   const handleDropdownChange = (rowId: string, value: string) => {
     setDropdownValues((prev) => ({ ...prev, [rowId]: value }));
+  };
+
+  const handleFileUpload = (itemId: string, file: File | null) => {
+    setUploadedFiles(prev => ({
+      ...prev,
+      [itemId]: file
+    }));
   };
 
   const tableData = [
@@ -377,10 +385,26 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             )}
           </td>
           <td className="px-3 py-3 text-sm border-r border-gray-200">
-            {item.sumberDokumen || "-"}
-          </td>
-          <td className="px-3 py-3 text-sm border-r border-gray-200">
-            {item.sumDok || "-"}
+            <div className="flex flex-col gap-2">
+              <input
+                type="file"
+                id={`file-${item.id}`}
+                onChange={(e) => handleFileUpload(item.id, e.target.files?.[0] || null)}
+                className="hidden"
+                accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"
+              />
+              <label
+                htmlFor={`file-${item.id}`}
+                className="px-3 py-1 bg-blue-500 text-white text-xs rounded cursor-pointer hover:bg-blue-600 text-center"
+              >
+                {uploadedFiles[item.id] ? 'Ganti File' : 'Upload File'}
+              </label>
+              {uploadedFiles[item.id] && (
+                <span className="text-xs text-gray-600 truncate" title={uploadedFiles[item.id]?.name}>
+                  {uploadedFiles[item.id]?.name}
+                </span>
+              )}
+            </div>
           </td>
           <td className="px-3 py-3 text-sm border-r border-gray-200">
             {item.isInfo ? (
@@ -406,52 +430,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             )}
           </td>
           <td className="px-3 py-3 text-sm border-r border-gray-200">
-            {item.isInfo ? (
-              "-"
-            ) : (
-              <select
-                value={dropdownValues[`${item.id}_pemDok`] || item.pemDok || ""}
-                onChange={(e) =>
-                  handleDropdownChange(`${item.id}_pemDok`, e.target.value)
-                }
-                className="w-full px-2 py-1 text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                {dropdownOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            )}
-          </td>
-          <td className="px-3 py-3 text-sm border-r border-gray-200">
             {item.rekomendasi || "-"}
-          </td>
-          <td className="px-3 py-3 text-sm border-r border-gray-200">
-            {item.isInfo ? (
-              "-"
-            ) : (
-              <select
-                value={
-                  dropdownValues[`${item.id}_pemenuhanDok2022`] ||
-                  item.pemenuhanDok2022 ||
-                  ""
-                }
-                onChange={(e) =>
-                  handleDropdownChange(
-                    `${item.id}_pemenuhanDok2022`,
-                    e.target.value
-                  )
-                }
-                className="w-full px-2 py-1 text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                {dropdownOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            )}
           </td>
         </tr>
         {hasChildren &&
@@ -519,13 +498,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   PEMENUHAN DOKUMEN
                 </th>
                 <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold">
-                  PEMENUHAN DOKUMEN
-                </th>
-                <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold">
                   REKOMENDASI
-                </th>
-                <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold min-w-[180px]">
-                  Pemenuhan Dokumen 2022
                 </th>
                 <th className="px-3 py-4 text-center font-semibold min-w-[150px]">
                   KETERANGAN DOKUMEN
