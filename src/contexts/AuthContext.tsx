@@ -3,8 +3,10 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 interface AuthContextType {
   isAuthenticated: boolean;
   user: any | null;
+  showSuccessAnimation: boolean;
   login: (username: string, password: string) => Promise<void>;
   logout: () => void;
+  setShowSuccessAnimation: (show: boolean) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -24,6 +26,7 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<any | null>(null);
+  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
 
   const login = async (username: string, password: string) => {
     // Simulasi API call
@@ -32,7 +35,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         if (username === "admin" && password === "admin123") {
           const userData = { username, role: "admin" };
           setUser(userData);
-          setIsAuthenticated(true);
+          setShowSuccessAnimation(true);
+          // Setelah animasi selesai, user akan diarahkan ke dashboard
+          setTimeout(() => {
+            setIsAuthenticated(true);
+            setShowSuccessAnimation(false);
+          }, 1800);
           resolve();
         } else {
           reject(new Error("Invalid credentials"));
@@ -44,13 +52,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logout = () => {
     setUser(null);
     setIsAuthenticated(false);
+    setShowSuccessAnimation(false);
   };
 
   const value = {
     isAuthenticated,
     user,
+    showSuccessAnimation,
     login,
     logout,
+    setShowSuccessAnimation,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

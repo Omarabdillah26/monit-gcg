@@ -1,32 +1,7 @@
 import React from "react";
 import { Settings, Database, Users, Shield } from "lucide-react";
 
-interface ParameterPageProps {
-  onNavigate?: (page: string) => void;
-}
-
-const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
-  // Mapping untuk navigasi ke halaman yang sesuai
-  const getNavigationTarget = (section: string) => {
-    const sectionMap: { [key: string]: string } = {
-      "I. KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN":
-        "komitmen",
-      "II. RUPS/PEMILIK MODAL": "pemegang-saham",
-      "III. DEWAN KOMISARIS/DEWAN PENGAWAS": "dewan-komisaris",
-      "IV. DIREKSI": "direksi",
-      "V. PENGUNGKAPAN INFORMASI DAN TRANSPARANSI": "pengungkapan",
-      "VI. ASPEK LAINNYA": "aspek-lain",
-    };
-    return sectionMap[section] || "";
-  };
-
-  const handleDescriptionClick = (section: string) => {
-    const targetPage = getNavigationTarget(section);
-    if (targetPage && onNavigate) {
-      onNavigate(targetPage);
-    }
-  };
-
+const ParameterPage: React.FC = () => {
   const data = [
     // KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN
     {
@@ -40,7 +15,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "2.",
@@ -49,7 +24,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "3.",
@@ -58,7 +33,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "4.",
@@ -67,7 +42,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "5.",
@@ -75,7 +50,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "6.",
@@ -84,7 +59,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "7.",
@@ -92,7 +67,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
       ],
       totalWeight: 21,
@@ -111,7 +86,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "2.",
@@ -120,7 +95,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "3.",
@@ -129,7 +104,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "4.",
@@ -138,7 +113,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "5.",
@@ -147,7 +122,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
       ],
       totalWeight: 15,
@@ -166,7 +141,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "2.",
@@ -175,7 +150,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "3.",
@@ -184,7 +159,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "4.",
@@ -193,7 +168,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "5.",
@@ -202,7 +177,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "6.",
@@ -211,7 +186,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "7.",
@@ -220,7 +195,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "8.",
@@ -229,7 +204,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "9.",
@@ -238,7 +213,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "10.",
@@ -247,7 +222,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "11.",
@@ -256,7 +231,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "12.",
@@ -265,7 +240,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
       ],
       totalWeight: 36,
@@ -284,7 +259,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "2.",
@@ -293,7 +268,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "3.",
@@ -302,7 +277,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "4.",
@@ -311,7 +286,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "5.",
@@ -320,7 +295,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "6.",
@@ -329,7 +304,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "7.",
@@ -338,7 +313,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "8.",
@@ -347,7 +322,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "9.",
@@ -356,7 +331,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "10.",
@@ -365,7 +340,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "11.",
@@ -374,7 +349,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "12.",
@@ -383,7 +358,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "13.",
@@ -392,7 +367,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
       ],
       totalWeight: 39,
@@ -411,7 +386,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "2.",
@@ -420,7 +395,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "3.",
@@ -429,7 +404,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "4.",
@@ -438,7 +413,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
       ],
       totalWeight: 12,
@@ -457,7 +432,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
         {
           no: "2.",
@@ -466,7 +441,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           weight: 3,
           score: 2.0,
           value: 2.0,
-          capaian: "ref jir",
+          ref: "ref jir",
         },
       ],
       totalWeight: 6,
@@ -496,12 +471,6 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
           Detail parameter dan kriteria penilaian setiap aspek tata kelola
           perusahaan
         </p>
-        <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-blue-800 text-sm">
-            💡 <strong>Tips:</strong> Klik pada penjelasan kriteria untuk
-            melihat detail lengkap di halaman yang sesuai di Dashboard.
-          </p>
-        </div>
       </div>
 
       {/* Overall Summary */}
@@ -550,7 +519,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
                     Nilai
                   </th>
                   <th className="border border-slate-300 px-3 py-2 w-32">
-                    Capaian
+                    Ref
                   </th>
                 </tr>
               </thead>
@@ -563,16 +532,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
                       {item.no}
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-left">
-                      <button
-                        onClick={() => handleDescriptionClick(section.section)}
-                        className="text-left text-blue-600 hover:text-blue-800 hover:underline cursor-pointer transition-all duration-200 hover:bg-blue-50 p-2 rounded-md w-full text-left"
-                        title={`Klik untuk melihat detail di halaman ${section.section}`}
-                      >
-                        <span className="flex items-start">
-                          <span className="mr-2 text-blue-400">🔗</span>
-                          {item.description}
-                        </span>
-                      </button>
+                      {item.description}
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center">
                       {item.weight}
@@ -584,7 +544,7 @@ const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
                       {item.value}
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center font-semibold text-red-600">
-                      {item.capaian}
+                      {item.ref}
                     </td>
                   </tr>
                 ))}
