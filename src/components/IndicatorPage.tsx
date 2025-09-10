@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useScore } from "../contexts/ScoreContext";
 
 const IndicatorPage: React.FC = () => {
+  const { getScoreWithFormula, getBobotWithFormula, scoreData } = useScore();
+  const [dynamicData, setDynamicData] = useState<any[]>([]);
+
   const data = [
     // KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN
     {
@@ -443,8 +447,53 @@ const IndicatorPage: React.FC = () => {
     },
   ];
 
+  // Effect to update dynamic data based on scores from KomitmenPage
+  useEffect(() => {
+    const updateDynamicData = () => {
+      const updatedData = data.map(section => {
+        if (section.section === "I. KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN") {
+          return {
+            ...section,
+            items: section.items.map(item => {
+              if (item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance).") {
+                // Get score from KomitmenPage for GCG Code using the specific formula
+                const gcgCodeScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) dan pedoman perilaku (code of conduct).");
+                const scoreValue = typeof gcgCodeScore === 'number' ? gcgCodeScore : parseFloat(gcgCodeScore as string) || 2.0;
+                
+                // Get bobot from KomitmenPage for GCG Code using the specific formula
+                const gcgCodeBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) dan pedoman perilaku (code of conduct).");
+                const bobotValue = typeof gcgCodeBobot === 'number' ? gcgCodeBobot : parseFloat(gcgCodeBobot as string) || 3;
+                
+                // Calculate achievement using Excel formula: =skor/bobot*100
+                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementPercentage = `${achievementValue.toFixed(2)}%`;
+                
+                return {
+                  ...item,
+                  weight: bobotValue,
+                  score: scoreValue,
+                  rawValue: scoreValue,
+                  achievement: achievementPercentage
+                };
+              }
+              return item;
+            })
+          };
+        }
+        return section;
+      });
+      
+      setDynamicData(updatedData);
+    };
+
+    updateDynamicData();
+  }, [scoreData, data]);
+
+  // Use dynamic data if available, otherwise use static data
+  const currentData = dynamicData.length > 0 ? dynamicData : data;
+
   // Hitung total keseluruhan
-  const overallTotal = data.reduce(
+  const overallTotal = currentData.reduce(
     (acc, section) => {
       acc.weight += section.totalWeight;
       if (typeof section.totalScore === "number") {
@@ -465,6 +514,16 @@ const IndicatorPage: React.FC = () => {
           Detail penilaian setiap aspek tata kelola perusahaan dengan bobot,
           skor, dan capaian
         </p>
+        {Object.keys(scoreData).length > 0 && (
+          <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+            <p className="text-green-700 text-sm">
+              🔗 <strong>Data Terhubung:</strong> Skor, Bobot, dan Capaian terhubung secara real-time dengan halaman Komitmen
+            </p>
+            <p className="text-green-600 text-xs mt-1">
+              Rumus Capaian: =skor/bobot*100 (otomatis terhitung)
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Overall Summary */}
@@ -484,7 +543,7 @@ const IndicatorPage: React.FC = () => {
       </div>
 
       {/* Detailed Tables for Each Section */}
-      {data.map((section, sectionIndex) => (
+      {currentData.map((section, sectionIndex) => (
         <div key={sectionIndex} className="mb-8">
           <h3 className="text-xl font-bold text-slate-800 mb-4 bg-slate-100 p-3 rounded-lg">
             {section.section}
@@ -518,7 +577,7 @@ const IndicatorPage: React.FC = () => {
 
               {/* Body */}
               <tbody>
-                {section.items.map((item, itemIndex) => (
+                {section.items.map((item: any, itemIndex: number) => (
                   <tr key={itemIndex} className="bg-white hover:bg-slate-50">
                     <td className="border border-slate-300 px-3 py-2 text-center font-medium">
                       {item.no}
@@ -527,10 +586,20 @@ const IndicatorPage: React.FC = () => {
                       {item.description}
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center">
-                      {item.weight}
+                      <div className="flex items-center justify-center space-x-1">
+                        <span>{item.weight}</span>
+                        {item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." && (
+                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen">🔗</span>
+                        )}
+                      </div>
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center">
-                      {item.score}
+                      <div className="flex items-center justify-center space-x-1">
+                        <span>{item.score}</span>
+                        {item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." && (
+                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen">🔗</span>
+                        )}
+                      </div>
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center">
                       {item.rawValue}
@@ -542,7 +611,12 @@ const IndicatorPage: React.FC = () => {
                           : "text-green-600"
                       }`}
                     >
-                      {item.achievement}
+                      <div className="flex items-center justify-center space-x-1">
+                        <span>{item.achievement}</span>
+                        {item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." && (
+                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen (rumus: =skor/bobot*100)">🔗</span>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -595,6 +669,18 @@ const IndicatorPage: React.FC = () => {
             </div>
             <div className="text-green-100">Total Skor</div>
           </div>
+        </div>
+      </div>
+
+      {/* Keterangan */}
+      <div className="mt-8 bg-blue-50 rounded-lg p-4 border border-blue-200">
+        <h3 className="font-semibold text-blue-800 mb-2">Keterangan:</h3>
+        <div className="text-sm text-blue-700 space-y-1">
+          <p>• 🔗 Skor, Bobot, dan Capaian dengan ikon link terhubung dengan halaman Komitmen secara real-time</p>
+          <p>• Perubahan data di halaman Komitmen akan otomatis terupdate di halaman ini</p>
+          <p>• Formula referensi seperti Excel: =Komitmen!SKOR Indikator dan =Komitmen!BOBOT</p>
+          <p>• Rumus Capaian: =skor/bobot*100 (otomatis terhitung)</p>
+          <p>• Data sesuai dengan struktur penilaian Good Corporate Governance</p>
         </div>
       </div>
     </div>

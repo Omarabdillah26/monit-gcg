@@ -1,5 +1,6 @@
 import React from "react";
 import { AuthProvider } from "./contexts/AuthContext";
+import { ScoreProvider } from "./contexts/ScoreContext";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import LoginSuccessAnimation from "./components/LoginSuccessAnimation";
@@ -28,7 +29,9 @@ const AppContent: React.FC = () => {
 function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <ScoreProvider>
+        <AppContent />
+      </ScoreProvider>
     </AuthProvider>
   );
 }

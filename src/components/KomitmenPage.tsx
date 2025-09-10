@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ChevronDown,
   ChevronRight,
@@ -8,10 +8,8 @@ import {
   Download,
   Eye,
   FileText,
-  Image,
-  Video,
-  Music,
 } from "lucide-react";
+import { useScore } from "../contexts/ScoreContext";
 
 interface KomitmenPageProps {
   onBack: () => void;
@@ -30,6 +28,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
   const [isSuperAdmin] = useState(true);
   const [selectedFile, setSelectedFile] = useState<FileData | null>(null);
   const [showFileViewer, setShowFileViewer] = useState(false);
+  const { updateScore, updateBobot } = useScore();
   const [tableData, setTableData] = useState([
     {
       id: "I",
@@ -553,6 +552,37 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
     },
   ]);
 
+  // Effect to sync score data with context
+  useEffect(() => {
+    const syncScores = () => {
+      // Update score for "Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) dan pedoman perilaku (code of conduct)."
+      const gcgCodeItem = tableData[0]?.children?.[0];
+      if (gcgCodeItem) {
+        const skorIndikator = getSumOfChildParameters(gcgCodeItem);
+        updateScore('komitmen_gcg_code', skorIndikator);
+        
+        // Update bobot for the same item
+        if (gcgCodeItem.bobot) {
+          updateBobot('komitmen_gcg_code', gcgCodeItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten."
+      const pelaksanaanItem = tableData[0]?.children?.[1];
+      if (pelaksanaanItem) {
+        const skorIndikator = getSumOfChildParameters(pelaksanaanItem);
+        updateScore('komitmen_pelaksanaan', skorIndikator);
+        
+        // Update bobot for the same item
+        if (pelaksanaanItem.bobot) {
+          updateBobot('komitmen_pelaksanaan', pelaksanaanItem.bobot);
+        }
+      }
+    };
+
+    syncScores();
+  }, [tableData, updateScore, updateBobot]);
+
   const toggleRow = (rowId: string) => {
     const newExpanded = new Set(expandedRows);
     if (newExpanded.has(rowId)) {
@@ -735,14 +765,6 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
     return formatted.trim();
   };
 
-  const getChildCapaianTotal = (parentNode: any, childId: string): string => {
-    if (!parentNode || !parentNode.children) return "-";
-    
-    const targetChild = parentNode.children.find((child: any) => child.id === childId);
-    if (!targetChild) return "-";
-    
-    return targetChild.capaianTotal || "-";
-  };
 
   const getSumOfChildParameters = (parentNode: any): string => {
     if (!parentNode || !parentNode.children) return "-";
@@ -813,17 +835,6 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
     return `${percentage.toFixed(1)}%`;
   };
 
-  const computeCapaianPersenAspek = (item: any): string => {
-    if (!item.skorAspek || !item.bobot) return "-";
-    
-    const aspek = parseFloat(item.skorAspek);
-    const bobot = parseFloat(item.bobot);
-    
-    if (isNaN(aspek) || isNaN(bobot) || bobot === 0) return "-";
-    
-    const percentage = (aspek / bobot) * 100;
-    return `${percentage.toFixed(1)}%`;
-  };
 
   const computeCapaianPersenMainItem = (item: any): string => {
     if (!item.bobot) return "-";
@@ -1139,23 +1150,28 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             )}
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
-            {item.bobot ? (
-              <select
-                value={Number(item.bobot).toFixed(3)}
-                onChange={(e) => handleBobotChange(item.id, e.target.value)}
-                className="px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                {/* Opsi nilai saat ini (agar tetap tampil meski tidak ada di daftar) */}
-                <option value={Number(item.bobot).toFixed(3)}>{parseFloat(Number(item.bobot).toFixed(3))}</option>
-                {/* Opsi standar */}
-                <option value={Number(0.5).toFixed(3)}>0.5</option>
-                <option value={Number(0.25).toFixed(3)}>0.25</option>
-                <option value={Number(0.75).toFixed(3)}>0.75</option>
-                <option value={Number(1).toFixed(3)}>1</option>
-              </select>
-            ) : (
-              "-"
-            )}
+            <div className="flex items-center justify-center space-x-1">
+              {item.bobot ? (
+                <select
+                  value={Number(item.bobot).toFixed(3)}
+                  onChange={(e) => handleBobotChange(item.id, e.target.value)}
+                  className="px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  {/* Opsi nilai saat ini (agar tetap tampil meski tidak ada di daftar) */}
+                  <option value={Number(item.bobot).toFixed(3)}>{parseFloat(Number(item.bobot).toFixed(3))}</option>
+                  {/* Opsi standar */}
+                  <option value={Number(0.5).toFixed(3)}>0.5</option>
+                  <option value={Number(0.25).toFixed(3)}>0.25</option>
+                  <option value={Number(0.75).toFixed(3)}>0.75</option>
+                  <option value={Number(1).toFixed(3)}>1</option>
+                </select>
+              ) : (
+                "-"
+              )}
+              {(item.id === "1" || item.id === "2") && (
+                <span className="text-blue-500" title="Terhubung dengan halaman Indikator">🔗</span>
+              )}
+            </div>
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
             {item.capaianSub || "-"}
@@ -1177,9 +1193,16 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             {item.skorParameter || "-"}
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
-            {item.skorIndikator && item.skorIndikator.startsWith("=Capaian FUK & Prm kategori Total bagian")
-              ? getSumOfChildParameters(item)
-              : item.skorIndikator || "-"}
+            <div className="flex items-center justify-center space-x-1">
+              <span>
+                {item.skorIndikator && item.skorIndikator.startsWith("=Capaian FUK & Prm kategori Total bagian")
+                  ? getSumOfChildParameters(item)
+                  : item.skorIndikator || "-"}
+              </span>
+              {item.skorIndikator && item.skorIndikator.startsWith("=Capaian FUK & Prm kategori Total bagian") && (
+                <span className="text-blue-500" title="Terhubung dengan halaman Indikator">🔗</span>
+              )}
+            </div>
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
             {item.id === "I" 
@@ -1297,6 +1320,11 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
         <p className="text-slate-600 text-lg">
           Detail penilaian dan dokumentasi komitmen tata kelola perusahaan
         </p>
+        <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+          <p className="text-blue-700 text-sm">
+            🔗 <strong>Data Terhubung:</strong> Perubahan skor indikator dan bobot akan otomatis terupdate di halaman Indikator
+          </p>
+        </div>
       </div>
 
       <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200">
@@ -1397,6 +1425,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           <p>• Format file: PDF, DOC, XLS, Images, Text (max 10MB)</p>
           <p>• Data sesuai dengan struktur penilaian governance</p>
           <p>• Format nomor: I → 1 → 1 → (1), (2), (3), (4)</p>
+          <p>• 🔗 Skor Indikator dan Bobot terhubung dengan halaman Indikator secara real-time</p>
+          <p>• Perubahan data akan otomatis terupdate di halaman terkait</p>
         </div>
       </div>
     </div>
