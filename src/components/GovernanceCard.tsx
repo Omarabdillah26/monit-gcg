@@ -46,82 +46,92 @@ const GovernanceCard: React.FC<GovernanceCardProps> = ({
       className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-slate-200 hover:border-blue-300 group overflow-hidden"
     >
       <div className="p-6">
-        {/* Header dengan icon dan arrow */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-            {icon}
-          </div>
-          <ChevronRight
-            className="text-slate-400 group-hover:text-blue-600 transition-colors duration-300"
-            size={20}
-          />
-        </div>
-
-        {/* Title dan Description */}
-        <h3 className="text-lg font-semibold text-slate-800 mb-2 group-hover:text-blue-800 transition-colors duration-300">
-          {title}
-        </h3>
-
-        <p className="text-slate-600 text-sm leading-relaxed mb-4">
-          {description}
-        </p>
-
-        {/* Metrics Section */}
-        <div className="space-y-3 mb-4">
-          {/* Bobot Indicator */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <BarChart3 size={16} className="text-slate-500" />
-              <span className="text-sm text-slate-600 font-medium">Bobot:</span>
+        <div className="flex items-center justify-between">
+          {/* Left side - Icon, Title, Description */}
+          <div className="flex items-start space-x-4 flex-1">
+            <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+              {icon}
             </div>
-            <span className="text-sm font-semibold text-slate-800">
-              {weight}%
-            </span>
-          </div>
-
-          {/* Skor */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Target size={16} className="text-slate-500" />
-              <span className="text-sm text-slate-600 font-medium">Skor:</span>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl font-semibold text-slate-800 mb-2 group-hover:text-blue-800 transition-colors duration-300">
+                {title}
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {description}
+              </p>
             </div>
-            <span
-              className={`text-sm font-semibold px-2 py-1 rounded-full ${getScoreColor(
-                score
-              )}`}
-            >
-              {score}
-            </span>
           </div>
 
-          {/* Capaian */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <TrendingUp size={16} className="text-slate-500" />
-              <span className="text-sm text-slate-600 font-medium">
-                Capaian:
-              </span>
+          {/* Right side - Metrics and Progress */}
+          <div className="flex items-center space-x-8 ml-6">
+            {/* Metrics */}
+            <div className="flex items-center space-x-6">
+              {/* Bobot */}
+              <div className="text-center">
+                <div className="flex items-center space-x-1 mb-1">
+                  <BarChart3 size={16} className="text-slate-500" />
+                  <span className="text-xs text-slate-600 font-medium">
+                    Bobot
+                  </span>
+                </div>
+                <span className="text-lg font-bold text-slate-800">
+                  {weight}%
+                </span>
+              </div>
+
+              {/* Skor */}
+              <div className="text-center">
+                <div className="flex items-center space-x-1 mb-1">
+                  <Target size={16} className="text-slate-500" />
+                  <span className="text-xs text-slate-600 font-medium">
+                    Skor
+                  </span>
+                </div>
+                <span
+                  className={`text-lg font-bold px-3 py-1 rounded-full ${getScoreColor(
+                    score
+                  )}`}
+                >
+                  {score}
+                </span>
+              </div>
+
+              {/* Capaian */}
+              <div className="text-center">
+                <div className="flex items-center space-x-1 mb-1">
+                  <TrendingUp size={16} className="text-slate-500" />
+                  <span className="text-xs text-slate-600 font-medium">
+                    Capaian
+                  </span>
+                </div>
+                <span className="text-lg font-bold text-slate-800">
+                  {achievement}%
+                </span>
+              </div>
             </div>
-            <span className="text-sm font-semibold text-slate-800">
-              {achievement}%
-            </span>
+
+            {/* Progress Bar */}
+            <div className="w-32">
+              <div className="w-full bg-slate-200 rounded-full h-3 mb-1">
+                <div
+                  className={`h-3 rounded-full transition-all duration-1000 ease-out ${getProgressColor(
+                    achievement
+                  )}`}
+                  style={{ width: `${achievement}%` }}
+                ></div>
+              </div>
+              <div className="flex justify-between text-xs text-slate-500">
+                <span>0%</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <ChevronRight
+              className="text-slate-400 group-hover:text-blue-600 transition-colors duration-300 flex-shrink-0"
+              size={24}
+            />
           </div>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="w-full bg-slate-200 rounded-full h-2 mb-2">
-          <div
-            className={`h-2 rounded-full transition-all duration-1000 ease-out ${getProgressColor(
-              achievement
-            )}`}
-            style={{ width: `${achievement}%` }}
-          ></div>
-        </div>
-
-        {/* Progress Label */}
-        <div className="flex justify-between text-xs text-slate-500">
-          <span>0%</span>
-          <span>100%</span>
         </div>
       </div>
 

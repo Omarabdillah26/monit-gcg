@@ -1,5 +1,4 @@
 import React from "react";
-import GovernanceCard from "./GovernanceCard";
 import {
   Shield,
   Users,
@@ -106,40 +105,74 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
         </p>
       </div>
 
-      {/* Overall Score Card */}
-      <div className="mb-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 text-white shadow-lg">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-2xl font-bold mb-2">SKOR KESELURUHAN</h2>
-            <p className="text-blue-100">Total Bobot: {totalWeight}%</p>
-          </div>
-          <div className="text-right">
-            <div className="text-4xl font-bold mb-1">{overallAchievement}%</div>
-            <div className="text-blue-100">Capaian</div>
-          </div>
+      {/* Tabel Penjelasan Kriteria */}
+      <div className="mb-8">
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-300 text-sm">
+            <thead>
+              <tr className="bg-blue-100">
+                <th className="border border-gray-300 px-3 py-2 text-left font-semibold">
+                  Penjelasan Kriteria
+                </th>
+                <th className="border border-gray-300 px-3 py-2 text-center font-semibold">
+                  Bobot Indikator
+                </th>
+                <th
+                  className="border border-gray-300 px-3 py-2 text-center font-semibold"
+                  colSpan={2}
+                >
+                  Capaian Th.2022
+                </th>
+              </tr>
+              <tr className="bg-blue-50">
+                <th className="border border-gray-300 px-3 py-1"></th>
+                <th className="border border-gray-300 px-3 py-1"></th>
+                <th className="border border-gray-300 px-3 py-1 text-center text-xs">
+                  Skor
+                </th>
+                <th className="border border-gray-300 px-3 py-1 text-center text-xs">
+                  Capaian %
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {governanceCards.map((card, index) => (
+                <tr
+                  key={card.id}
+                  className="hover:bg-gray-50 cursor-pointer"
+                  onClick={() => onCardClick(card.id)}
+                >
+                  <td className="border border-gray-300 px-3 py-2 text-left">
+                    {String.fromCharCode(73 + index)}. {card.title}
+                  </td>
+                  <td className="border border-gray-300 px-3 py-2 text-center">
+                    {card.weight.toFixed(2)}
+                  </td>
+                  <td className="border border-gray-300 px-3 py-2 text-center">
+                    {((card.score * card.weight) / 100).toFixed(3)}
+                  </td>
+                  <td className="border border-gray-300 px-3 py-2 text-center">
+                    {card.achievement.toFixed(3)}
+                  </td>
+                </tr>
+              ))}
+              <tr className="bg-gray-100 font-bold">
+                <td className="border border-gray-300 px-3 py-2 text-left">
+                  TOTAL
+                </td>
+                <td className="border border-gray-300 px-3 py-2 text-center">
+                  {totalWeight.toFixed(2)}
+                </td>
+                <td className="border border-gray-300 px-3 py-2 text-center">
+                  {totalScore.toFixed(3)}
+                </td>
+                <td className="border border-gray-300 px-3 py-2 text-center">
+                  {overallAchievement.toFixed(3)}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div className="mt-4 w-full bg-blue-500 bg-opacity-30 rounded-full h-3">
-          <div
-            className="bg-white h-3 rounded-full transition-all duration-1000 ease-out"
-            style={{ width: `${overallAchievement}%` }}
-          ></div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {governanceCards.map((card) => (
-          <GovernanceCard
-            key={card.id}
-            title={card.title}
-            description={card.description}
-            icon={card.icon}
-            weight={card.weight}
-            score={card.score}
-            achievement={card.achievement}
-            color={card.color}
-            onClick={() => onCardClick(card.id)}
-          />
-        ))}
       </div>
 
       <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">

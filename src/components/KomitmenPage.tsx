@@ -119,6 +119,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   sumberDokumen: "SK Dewan Komisaris, Notulen Rapat",
                   keteranganDokumen:
                     "Dokumen GCG sudah lengkap dan sesuai standar",
+                  pic: "",
                 },
                 {
                   id: "1.1.2",
@@ -141,6 +142,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   sumberDokumen: "Laporan Sosialisasi, Daftar Hadir",
                   keteranganDokumen:
                     "Sudah ditandatangani oleh Dewan Komisaris",
+                  pic: "",
                 },
                 {
                   id: "1.1.3",
@@ -562,6 +564,751 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
           ],
         },
+        {
+          id: "3",
+          no: "3",
+          penjelasanKriteria:
+            "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator:
+            "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "3.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki struktur organisasi yang jelas dan terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "3.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat struktur organisasi yang terdokumentasi dengan jelas.",
+                  unsurPemenuhan: "Ada struktur organisasi yang terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "SK Direksi, Struktur Organisasi",
+                  keteranganDokumen:
+                    "Struktur organisasi sudah terdokumentasi dengan baik",
+                },
+                {
+                  id: "3.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Struktur organisasi mendukung penerapan GCG secara efektif.",
+                  unsurPemenuhan: "Struktur organisasi mendukung penerapan GCG",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Analisis Struktur, Laporan GCG",
+                  keteranganDokumen: "Struktur organisasi mendukung GCG",
+                },
+              ],
+            },
+            {
+              id: "3.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan memiliki job description yang jelas untuk setiap posisi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "3.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat job description yang jelas untuk setiap posisi.",
+                  unsurPemenuhan: "Ada job description untuk setiap posisi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Job Description, SK Direksi",
+                  keteranganDokumen: "Job description sudah lengkap dan jelas",
+                },
+                {
+                  id: "3.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Job description ditinjau dan dimutakhirkan secara berkala.",
+                  unsurPemenuhan:
+                    "Job description ditinjau dan dimutakhirkan berkala",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Review, Update Job Description",
+                  keteranganDokumen: "Job description direview secara berkala",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "4",
+          no: "4",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem pengendalian internal yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator:
+            "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pengendalian internal yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "4.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki sistem pengendalian internal yang terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "4.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat sistem pengendalian internal yang terdokumentasi.",
+                  unsurPemenuhan:
+                    "Ada sistem pengendalian internal terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Manual SPI, Prosedur Internal",
+                  keteranganDokumen:
+                    "Sistem pengendalian internal sudah terdokumentasi",
+                },
+                {
+                  id: "4.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Sistem pengendalian internal diimplementasikan secara efektif.",
+                  unsurPemenuhan: "SPI diimplementasikan secara efektif",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Implementasi, Audit Internal",
+                  keteranganDokumen: "SPI diimplementasikan dengan efektif",
+                },
+              ],
+            },
+            {
+              id: "4.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan monitoring dan evaluasi sistem pengendalian internal.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "4.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat monitoring sistem pengendalian internal secara berkala.",
+                  unsurPemenuhan: "Ada monitoring SPI secara berkala",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Monitoring, Jadwal Review",
+                  keteranganDokumen: "Monitoring SPI dilakukan secara berkala",
+                },
+                {
+                  id: "4.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Terdapat evaluasi dan perbaikan sistem pengendalian internal.",
+                  unsurPemenuhan: "Ada evaluasi dan perbaikan SPI",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Evaluasi, Action Plan",
+                  keteranganDokumen:
+                    "Evaluasi dan perbaikan SPI berjalan rutin",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "5",
+          no: "5",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem manajemen risiko yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator:
+            "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem manajemen risiko yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "5.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki sistem manajemen risiko yang terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "5.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat sistem manajemen risiko yang terdokumentasi.",
+                  unsurPemenuhan: "Ada sistem manajemen risiko terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Manual Manajemen Risiko, Prosedur",
+                  keteranganDokumen:
+                    "Sistem manajemen risiko sudah terdokumentasi",
+                },
+                {
+                  id: "5.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Sistem manajemen risiko diimplementasikan secara efektif.",
+                  unsurPemenuhan: "SMR diimplementasikan secara efektif",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Implementasi, Risk Register",
+                  keteranganDokumen: "SMR diimplementasikan dengan efektif",
+                },
+              ],
+            },
+            {
+              id: "5.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan identifikasi, analisis, dan mitigasi risiko.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "5.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat identifikasi risiko secara berkala.",
+                  unsurPemenuhan: "Ada identifikasi risiko secara berkala",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Risk Register, Laporan Identifikasi",
+                  keteranganDokumen:
+                    "Identifikasi risiko dilakukan secara berkala",
+                },
+                {
+                  id: "5.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Terdapat analisis dan mitigasi risiko yang efektif.",
+                  unsurPemenuhan: "Ada analisis dan mitigasi risiko efektif",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Risk Assessment, Mitigation Plan",
+                  keteranganDokumen:
+                    "Analisis dan mitigasi risiko berjalan efektif",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "6",
+          no: "6",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem audit internal yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator:
+            "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem audit internal yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "6.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki unit audit internal yang independen.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "6.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat unit audit internal yang independen.",
+                  unsurPemenuhan: "Ada unit audit internal independen",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "SK Unit Audit, Struktur Organisasi",
+                  keteranganDokumen: "Unit audit internal sudah independen",
+                },
+                {
+                  id: "6.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Unit audit internal memiliki kompetensi yang memadai.",
+                  unsurPemenuhan:
+                    "Unit audit internal memiliki kompetensi memadai",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "CV Auditor, Sertifikat Kompetensi",
+                  keteranganDokumen: "Kompetensi auditor sudah memadai",
+                },
+              ],
+            },
+            {
+              id: "6.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan audit internal secara berkala dan efektif.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "6.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat program audit internal yang terjadwal.",
+                  unsurPemenuhan: "Ada program audit internal terjadwal",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Program Audit, Jadwal Audit",
+                  keteranganDokumen: "Program audit internal sudah terjadwal",
+                },
+                {
+                  id: "6.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Audit internal dilaksanakan secara efektif dan independen.",
+                  unsurPemenuhan:
+                    "Audit internal dilaksanakan efektif dan independen",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Audit, Follow-up Action",
+                  keteranganDokumen: "Audit internal dilaksanakan efektif",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "7",
+          no: "7",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem pelaporan yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator:
+            "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pelaporan yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "7.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki sistem pelaporan yang terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "7.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat sistem pelaporan yang terdokumentasi dengan jelas.",
+                  unsurPemenuhan: "Ada sistem pelaporan terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Manual Pelaporan, Prosedur",
+                  keteranganDokumen: "Sistem pelaporan sudah terdokumentasi",
+                },
+                {
+                  id: "7.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Sistem pelaporan mencakup semua aspek yang diperlukan.",
+                  unsurPemenuhan: "Sistem pelaporan mencakup semua aspek",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Template Laporan, Checklist",
+                  keteranganDokumen: "Sistem pelaporan sudah komprehensif",
+                },
+              ],
+            },
+            {
+              id: "7.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan pelaporan secara berkala dan tepat waktu.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "7.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat jadwal pelaporan yang jelas dan terjadwal.",
+                  unsurPemenuhan: "Ada jadwal pelaporan jelas dan terjadwal",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Jadwal Pelaporan, Kalender",
+                  keteranganDokumen: "Jadwal pelaporan sudah jelas",
+                },
+                {
+                  id: "7.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Pelaporan dilakukan tepat waktu dan berkualitas.",
+                  unsurPemenuhan: "Pelaporan tepat waktu dan berkualitas",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Berkala, Quality Check",
+                  keteranganDokumen: "Pelaporan berkualitas dan tepat waktu",
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
   ]);
@@ -592,6 +1339,66 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           updateBobot("komitmen_pelaksanaan", pelaksanaanItem.bobot);
         }
       }
+
+      // Update score for "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik."
+      const strukturItem = tableData[0]?.children?.[2];
+      if (strukturItem) {
+        const skorIndikator = getSumOfChildParameters(strukturItem);
+        updateScore("komitmen_struktur", skorIndikator);
+
+        // Update bobot for the same item
+        if (strukturItem.bobot) {
+          updateBobot("komitmen_struktur", strukturItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem pengendalian internal yang efektif."
+      const spiItem = tableData[0]?.children?.[3];
+      if (spiItem) {
+        const skorIndikator = getSumOfChildParameters(spiItem);
+        updateScore("komitmen_spi", skorIndikator);
+
+        // Update bobot for the same item
+        if (spiItem.bobot) {
+          updateBobot("komitmen_spi", spiItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem manajemen risiko yang efektif."
+      const smrItem = tableData[0]?.children?.[4];
+      if (smrItem) {
+        const skorIndikator = getSumOfChildParameters(smrItem);
+        updateScore("komitmen_smr", skorIndikator);
+
+        // Update bobot for the same item
+        if (smrItem.bobot) {
+          updateBobot("komitmen_smr", smrItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem audit internal yang efektif."
+      const auditItem = tableData[0]?.children?.[5];
+      if (auditItem) {
+        const skorIndikator = getSumOfChildParameters(auditItem);
+        updateScore("komitmen_audit", skorIndikator);
+
+        // Update bobot for the same item
+        if (auditItem.bobot) {
+          updateBobot("komitmen_audit", auditItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem pelaporan yang efektif."
+      const pelaporanItem = tableData[0]?.children?.[6];
+      if (pelaporanItem) {
+        const skorIndikator = getSumOfChildParameters(pelaporanItem);
+        updateScore("komitmen_pelaporan", skorIndikator);
+
+        // Update bobot for the same item
+        if (pelaporanItem.bobot) {
+          updateBobot("komitmen_pelaporan", pelaporanItem.bobot);
+        }
+      }
     };
 
     syncScores();
@@ -612,6 +1419,54 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
       return items.map((item) => {
         if (item.id === itemId) {
           return { ...item, status: newStatus };
+        }
+        if (item.children) {
+          return { ...item, children: updateItemInArray(item.children) };
+        }
+        return item;
+      });
+    };
+
+    setTableData((prevData) => updateItemInArray(prevData));
+  };
+
+  const updatePic = (itemId: string, newPic: string) => {
+    const updateItemInArray = (items: any[]): any[] => {
+      return items.map((item) => {
+        if (item.id === itemId) {
+          return { ...item, pic: newPic };
+        }
+        if (item.children) {
+          return { ...item, children: updateItemInArray(item.children) };
+        }
+        return item;
+      });
+    };
+
+    setTableData((prevData) => updateItemInArray(prevData));
+  };
+
+  const updateKeteranganDokumen = (itemId: string, newKeterangan: string) => {
+    const updateItemInArray = (items: any[]): any[] => {
+      return items.map((item) => {
+        if (item.id === itemId) {
+          return { ...item, keteranganDokumen: newKeterangan };
+        }
+        if (item.children) {
+          return { ...item, children: updateItemInArray(item.children) };
+        }
+        return item;
+      });
+    };
+
+    setTableData((prevData) => updateItemInArray(prevData));
+  };
+
+  const updateRekomendasi = (itemId: string, newRekomendasi: string) => {
+    const updateItemInArray = (items: any[]): any[] => {
+      return items.map((item) => {
+        if (item.id === itemId) {
+          return { ...item, rekomendasi: newRekomendasi };
         }
         if (item.children) {
           return { ...item, children: updateItemInArray(item.children) };
@@ -666,35 +1521,10 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
     setTableData((prevData) => updateItemInArray(prevData));
   };
 
-  // Handler untuk mengubah bobot dan menyesuaikan nilai turunan yang terkait
-  const handleBobotChange = (itemId: string, value: string) => {
-    const formatted = Number(value).toFixed(3);
-
-    const updateItemInArray = (items: any[]): any[] => {
-      return items.map((item) => {
-        if (item.id === itemId) {
-          // Jika item memiliki skorParameter numerik, sinkronkan agar perhitungan turunannya (sum & persen) ikut berubah
-          const currentSkorParamIsNumeric =
-            item.skorParameter !== undefined &&
-            item.skorParameter !== "" &&
-            !isNaN(parseFloat(item.skorParameter));
-          return {
-            ...item,
-            bobot: formatted,
-            skorParameter: currentSkorParamIsNumeric
-              ? formatted
-              : item.skorParameter,
-          };
-        }
-        if (item.children) {
-          return { ...item, children: updateItemInArray(item.children) };
-        }
-        return item;
-      });
-    };
-
-    setTableData((prev) => updateItemInArray(prev));
-  };
+  // Handler untuk mengubah bobot - DISABLED (bobot sekarang fixed)
+  // const handleBobotChange = (itemId: string, value: string) => {
+  //   // Function disabled - bobot values are now fixed and cannot be changed
+  // };
 
   // Hitung ulang skorParameter untuk node yang anak-anaknya memiliki capaianTotal
   const recalcSkorParameters = (items: any[]): any[] => {
@@ -1179,25 +2009,19 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
             <div className="flex items-center justify-center space-x-1">
               {item.bobot ? (
-                <select
-                  value={Number(item.bobot).toFixed(3)}
-                  onChange={(e) => handleBobotChange(item.id, e.target.value)}
-                  className="px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                >
-                  {/* Opsi nilai saat ini (agar tetap tampil meski tidak ada di daftar) */}
-                  <option value={Number(item.bobot).toFixed(3)}>
-                    {parseFloat(Number(item.bobot).toFixed(3))}
-                  </option>
-                  {/* Opsi standar */}
-                  <option value={Number(0.5).toFixed(3)}>0.5</option>
-                  <option value={Number(0.25).toFixed(3)}>0.25</option>
-                  <option value={Number(0.75).toFixed(3)}>0.75</option>
-                  <option value={Number(1).toFixed(3)}>1</option>
-                </select>
+                <span className="px-2 py-1 text-xs bg-gray-100 border border-gray-300 rounded text-gray-700 font-medium">
+                  {parseFloat(Number(item.bobot).toFixed(3))}
+                </span>
               ) : (
                 "-"
               )}
-              {(item.id === "1" || item.id === "2") && (
+              {(item.id === "1" ||
+                item.id === "2" ||
+                item.id === "3" ||
+                item.id === "4" ||
+                item.id === "5" ||
+                item.id === "6" ||
+                item.id === "7") && (
                 <span
                   className="text-blue-500"
                   title="Terhubung dengan halaman Indikator"
@@ -1212,15 +2036,19 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
             {level === 3 ? (
-              <input
-                type="number"
-                step="0.001"
+              <select
                 value={item.capaianTotal || ""}
                 onChange={(e) =>
                   handleCapaianTotalChange(item.id, e.target.value)
                 }
                 className="w-20 px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center"
-              />
+              >
+                <option value="">Pilih</option>
+                <option value="0.25">0.25</option>
+                <option value="0.5">0.5</option>
+                <option value="0.75">0.75</option>
+                <option value="1">1</option>
+              </select>
             ) : (
               item.capaianTotal || "-"
             )}
@@ -1295,11 +2123,49 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           </td>
           <td className="px-3 py-3 text-sm border-r border-gray-200 min-w-[200px]">
             {level === 3 ? (
+              <select
+                value={item.pic || ""}
+                onChange={(e) => updatePic(item.id, e.target.value)}
+                className="w-full px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="">Pilih PIC</option>
+                <option value="bod-1">bod-1</option>
+                <option value="kspi">kspi</option>
+                <option value="setper">setper</option>
+                <option value="aga">aga</option>
+                <option value="keu">keu</option>
+                <option value="op">op</option>
+                <option value="ren">ren</option>
+                <option value="mhc">mhc</option>
+                <option value="hukum">hukum</option>
+                <option value="mr">mr</option>
+              </select>
+            ) : (
+              <div className="text-center text-gray-500">{item.pic || "-"}</div>
+            )}
+          </td>
+          <td className="px-3 py-3 text-sm border-r border-gray-200 min-w-[200px]">
+            {level === 3 ? (
               <FileUploadComponent item={item} />
             ) : (
               <div className="text-center text-gray-500">
                 {item.pemenuhanDokumen || "-"}
               </div>
+            )}
+          </td>
+          <td className="px-3 py-3 text-sm text-center border-r border-gray-200 max-w-[200px]">
+            {level === 3 ? (
+              <input
+                type="text"
+                value={item.keteranganDokumen || ""}
+                onChange={(e) =>
+                  updateKeteranganDokumen(item.id, e.target.value)
+                }
+                className="w-full px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Masukkan keterangan..."
+              />
+            ) : (
+              <div className="break-words">{item.keteranganDokumen || "-"}</div>
             )}
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
@@ -1310,37 +2176,48 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                 className="px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">Pilih Status</option>
-                <option value="Approve">Ada</option>
-                <option value="Decline">Tidak Ada</option>
+                <option value="approve">Approve</option>
+                <option value="decline">Decline</option>
+                <option value="pending">Pending</option>
               </select>
             ) : (
               <span
                 className={`px-2 py-1 rounded text-xs ${
-                  item.status === "Ada"
+                  item.status === "approve"
                     ? "bg-green-100 text-green-800"
-                    : item.status === "Tidak Ada"
+                    : item.status === "decline"
                     ? "bg-red-100 text-red-800"
+                    : item.status === "pending"
+                    ? "bg-yellow-100 text-yellow-800"
                     : "bg-gray-100 text-gray-600"
                 }`}
               >
-                {item.status || "-"}
+                {item.status === "approve"
+                  ? "Approve"
+                  : item.status === "decline"
+                  ? "Decline"
+                  : item.status === "pending"
+                  ? "Pending"
+                  : item.status || "-"}
               </span>
             )}
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
-            {item.rekomendasi ? (
+            {isSuperAdmin && level === 3 ? (
+              <input
+                type="text"
+                value={item.rekomendasi || ""}
+                onChange={(e) => updateRekomendasi(item.id, e.target.value)}
+                className="w-full px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Masukkan rekomendasi..."
+              />
+            ) : item.rekomendasi ? (
               <span className="px-2 py-1 rounded text-xs bg-yellow-100 text-yellow-800">
                 {item.rekomendasi}
               </span>
             ) : (
               "-"
             )}
-          </td>
-          <td className="px-3 py-3 text-sm text-center border-r border-gray-200 max-w-[200px]">
-            <div className="break-words">{item.sumberDokumen || "-"}</div>
-          </td>
-          <td className="px-3 py-3 text-sm text-center max-w-[200px]">
-            <div className="break-words">{item.keteranganDokumen || "-"}</div>
           </td>
         </tr>
         {hasChildren &&
@@ -1408,19 +2285,19 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   % Capaian
                 </th>
                 <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold min-w-[200px]">
+                  PIC
+                </th>
+                <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold min-w-[200px]">
                   PEMENUHAN DOKUMEN
+                </th>
+                <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold">
+                  KETERANGAN DOKUMEN
                 </th>
                 <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold">
                   STATUS
                 </th>
-                <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold">
-                  REKOMENDASI
-                </th>
-                <th className="px-3 py-4 text-center border-r border-cyan-300 font-semibold">
-                  SUMBER DOKUMEN
-                </th>
                 <th className="px-3 py-4 text-center font-semibold">
-                  KETERANGAN DOKUMEN
+                  REKOMENDASI
                 </th>
               </tr>
               <tr className="bg-cyan-300 text-white">
@@ -1476,6 +2353,30 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           <p>
             • 🔗 Skor Indikator dan Bobot terhubung dengan halaman Indikator
             secara real-time
+          </p>
+          <p>
+            • <strong>Bobot:</strong> Nilai bobot sudah fixed dan tidak dapat
+            diubah
+          </p>
+          <p>
+            • <strong>Capaian Total:</strong> Dropdown dengan opsi 0.25, 0.5,
+            0.75, 1
+          </p>
+          <p>
+            • <strong>PIC:</strong> Dropdown dengan opsi bod-1, kspi, setper,
+            aga, keu, op, ren, mhc, hukum, mr
+          </p>
+          <p>
+            • <strong>Keterangan Dokumen:</strong> Input text untuk menambahkan
+            keterangan
+          </p>
+          <p>
+            • <strong>Status:</strong> Dropdown dengan opsi Approve, Decline,
+            Pending
+          </p>
+          <p>
+            • <strong>Rekomendasi:</strong> Super Admin dapat input text, User
+            melihat rekomendasi
           </p>
           <p>• Perubahan data akan otomatis terupdate di halaman terkait</p>
         </div>
