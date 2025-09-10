@@ -1169,7 +1169,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                 "-"
               )}
               {(item.id === "1" || item.id === "2") && (
-                <span className="text-blue-500" title="Terhubung dengan halaman Indikator">🔗</span>
+                <span className="text-blue-500" title="Terhubung dengan halaman Indikator"></span>
               )}
             </div>
           </td>
@@ -1200,7 +1200,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   : item.skorIndikator || "-"}
               </span>
               {item.skorIndikator && item.skorIndikator.startsWith("=Capaian FUK & Prm kategori Total bagian") && (
-                <span className="text-blue-500" title="Terhubung dengan halaman Indikator">🔗</span>
+                <span className="text-blue-500" title="Terhubung dengan halaman Indikator"></span>
               )}
             </div>
           </td>
@@ -1320,11 +1320,6 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
         <p className="text-slate-600 text-lg">
           Detail penilaian dan dokumentasi komitmen tata kelola perusahaan
         </p>
-        <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-blue-700 text-sm">
-            🔗 <strong>Data Terhubung:</strong> Perubahan skor indikator dan bobot akan otomatis terupdate di halaman Indikator
-          </p>
-        </div>
       </div>
 
       <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200">

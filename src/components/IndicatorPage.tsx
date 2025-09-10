@@ -515,13 +515,7 @@ const IndicatorPage: React.FC = () => {
           skor, dan capaian
         </p>
         {Object.keys(scoreData).length > 0 && (
-          <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-            <p className="text-green-700 text-sm">
-              🔗 <strong>Data Terhubung:</strong> Skor, Bobot, dan Capaian terhubung secara real-time dengan halaman Komitmen
-            </p>
-            <p className="text-green-600 text-xs mt-1">
-              Rumus Capaian: =skor/bobot*100 (otomatis terhitung)
-            </p>
+          <div className="mt-4 p-3 bg-white-50 border border-white-200 rounded-lg">
           </div>
         )}
       </div>
@@ -589,7 +583,7 @@ const IndicatorPage: React.FC = () => {
                       <div className="flex items-center justify-center space-x-1">
                         <span>{item.weight}</span>
                         {item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." && (
-                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen">🔗</span>
+                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen"></span>
                         )}
                       </div>
                     </td>
@@ -597,7 +591,7 @@ const IndicatorPage: React.FC = () => {
                       <div className="flex items-center justify-center space-x-1">
                         <span>{item.score}</span>
                         {item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." && (
-                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen">🔗</span>
+                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen"></span>
                         )}
                       </div>
                     </td>
@@ -614,7 +608,7 @@ const IndicatorPage: React.FC = () => {
                       <div className="flex items-center justify-center space-x-1">
                         <span>{item.achievement}</span>
                         {item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." && (
-                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen (rumus: =skor/bobot*100)">🔗</span>
+                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen (rumus: =skor/bobot*100)"></span>
                         )}
                       </div>
                     </td>
