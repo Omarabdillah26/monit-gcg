@@ -36,9 +36,9 @@ const Dashboard: React.FC<DashboardProps> = ({ username }) => {
       case "home":
         return <HomePage onCardClick={handleCardClick} />;
       case "indikator":
-        return <IndicatorPage />;
+        return <IndicatorPage onNavigate={setCurrentPage} />;
       case "parameter":
-        return <ParameterPage />;
+        return <ParameterPage onNavigate={setCurrentPage} />;
       case "komitmen":
         return <KomitmenPage onBack={handleBackToHome} />;
       case "pemegang-saham":

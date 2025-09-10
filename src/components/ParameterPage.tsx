@@ -1,7 +1,31 @@
 import React from "react";
 import { Settings, Database, Users, Shield } from "lucide-react";
 
-const ParameterPage: React.FC = () => {
+interface ParameterPageProps {
+  onNavigate?: (page: string) => void;
+}
+
+const ParameterPage: React.FC<ParameterPageProps> = ({ onNavigate }) => {
+  // Mapping untuk navigasi ke halaman yang sesuai
+  const getNavigationTarget = (section: string) => {
+    const sectionMap: { [key: string]: string } = {
+      "I. KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN":
+        "komitmen",
+      "II. RUPS/PEMILIK MODAL": "pemegang-saham",
+      "III. DEWAN KOMISARIS/DEWAN PENGAWAS": "dewan-komisaris",
+      "IV. DIREKSI": "direksi",
+      "V. PENGUNGKAPAN INFORMASI DAN TRANSPARANSI": "pengungkapan",
+      "VI. ASPEK LAINNYA": "aspek-lain",
+    };
+    return sectionMap[section] || "";
+  };
+
+  const handleDescriptionClick = (section: string) => {
+    const targetPage = getNavigationTarget(section);
+    if (targetPage && onNavigate) {
+      onNavigate(targetPage);
+    }
+  };
   const data = [
     // KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN
     {
@@ -471,6 +495,12 @@ const ParameterPage: React.FC = () => {
           Detail parameter dan kriteria penilaian setiap aspek tata kelola
           perusahaan
         </p>
+        <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <p className="text-blue-800 text-sm">
+            💡 <strong>Tips:</strong> Klik pada penjelasan kriteria untuk
+            melihat detail lengkap di halaman yang sesuai di Dashboard.
+          </p>
+        </div>
       </div>
 
       {/* Overall Summary */}
@@ -532,7 +562,16 @@ const ParameterPage: React.FC = () => {
                       {item.no}
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-left">
-                      {item.description}
+                      <button
+                        onClick={() => handleDescriptionClick(section.section)}
+                        className="text-left text-blue-600 hover:text-blue-800 hover:underline cursor-pointer transition-all duration-200 hover:bg-blue-50 p-2 rounded-md w-full text-left"
+                        title={`Klik untuk melihat detail di halaman ${section.section}`}
+                      >
+                        <span className="flex items-start">
+                          <span className="mr-2 text-blue-400">🔗</span>
+                          {item.description}
+                        </span>
+                      </button>
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center">
                       {item.weight}

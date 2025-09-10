@@ -105,219 +105,309 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
         </p>
       </div>
 
-      {/* Card Summary Penjelasan Kriteria */}
-      <div className="mb-8 bg-white rounded-xl shadow-lg border border-slate-200">
-        <div className="bg-cyan-400 text-white px-6 py-4 rounded-t-xl">
-          <h2 className="text-xl font-bold">PENJELASAN KRITERIA</h2>
+      {/* Card List untuk Setiap Aspek */}
+      <div className="mb-8">
+        {/* Header Info */}
+        <div className="mb-6 bg-gradient-to-r from-cyan-400 to-cyan-500 text-white rounded-xl p-4 shadow-lg">
+          <h2 className="text-xl font-bold text-center">PENJELASAN KRITERIA</h2>
         </div>
-        <div className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card Bobot Indikator */}
-            <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-sm font-medium text-blue-600 mb-1">
-                    Bobot Indikator
-                  </h3>
-                  <p className="text-2xl font-bold text-blue-800">
-                    {totalWeight.toFixed(2)}
-                  </p>
-                </div>
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
 
-            {/* Card Capaian Th.2022 */}
-            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-sm font-medium text-green-600 mb-1">
-                    Capaian Th.2022
-                  </h3>
-                  <p className="text-2xl font-bold text-green-800">
-                    {overallAchievement.toFixed(3)}%
-                  </p>
-                </div>
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card Skor */}
-            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-sm font-medium text-purple-600 mb-1">
-                    Skor
-                  </h3>
-                  <p className="text-2xl font-bold text-purple-800">
-                    {totalScore.toFixed(3)}
-                  </p>
-                </div>
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-purple-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card Capaian % */}
-            <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-sm font-medium text-orange-600 mb-1">
-                    Capaian %
-                  </h3>
-                  <p className="text-2xl font-bold text-orange-800">
-                    {overallAchievement}%
-                  </p>
-                </div>
-                <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-orange-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Card Layout untuk Setiap Aspek */}
-      <div className="space-y-6">
-        {governanceCards.map((card, index) => (
-          <div
-            key={card.id}
-            className="bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-200 cursor-pointer"
-            onClick={() => onCardClick(card.id)}
-          >
-            <div className="p-6">
+        {/* Card List dengan Jarak */}
+        <div className="space-y-4">
+          {governanceCards.map((card, index) => (
+            <div
+              key={card.id}
+              className="bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 p-6"
+              onClick={() => onCardClick(card.id)}
+            >
               <div className="flex items-start justify-between">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
-                    {card.icon}
+                {/* Left Section - Penjelasan Kriteria */}
+                <div className="flex items-start space-x-4 flex-1">
+                  <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 font-bold text-lg border-2 border-blue-200">
+                    {String.fromCharCode(73 + index)}.
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
-                      {String.fromCharCode(73 + index)}. {card.title}
+                    <h3 className="font-bold text-slate-800 mb-2 text-lg">
+                      {card.title}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    <p className="text-slate-600 leading-relaxed">
                       {card.description}
                     </p>
-                    <div className="flex space-x-6 text-sm">
-                      <div>
-                        <span className="text-slate-500">Bobot:</span>
-                        <span className="ml-1 font-semibold text-slate-800">
-                          {card.weight.toFixed(2)}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-slate-500">Skor:</span>
-                        <span className="ml-1 font-semibold text-slate-800">
-                          {((card.score * card.weight) / 100).toFixed(3)}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-slate-500">Capaian:</span>
-                        <span className="ml-1 font-semibold text-slate-800">
-                          {card.achievement.toFixed(3)}%
-                        </span>
-                      </div>
-                    </div>
                   </div>
                 </div>
-                <div className="flex-shrink-0">
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-slate-800">
-                      {card.achievement}%
+
+                {/* Right Section - Metrics */}
+                <div className="flex items-center space-x-8 ml-6">
+                  {/* Bobot Indikator */}
+                  <div className="text-center">
+                    <div className="text-xs text-slate-500 mb-1 font-medium">
+                      BOBOT INDIKATOR
                     </div>
-                    <div className="text-sm text-slate-500">Capaian</div>
+                    <div className="text-2xl font-bold text-blue-600">
+                      {card.weight.toFixed(2)}
+                    </div>
+                  </div>
+
+                  {/* Capaian TH 2022 */}
+                  <div className="text-center">
+                    <div className="text-xs text-slate-500 mb-1 font-medium">
+                      CAPAIAN TH 2022
+                    </div>
+                    <div className="space-y-2">
+                      <div>
+                        <div className="text-xs text-slate-400 mb-1">SKOR</div>
+                        <div className="text-lg font-bold text-blue-600">
+                          {((card.score * card.weight) / 100).toFixed(3)}
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-slate-400 mb-1">
+                          CAPAIAN %
+                        </div>
+                        <div className="text-lg font-bold text-blue-600">
+                          {card.achievement.toFixed(0)}%
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Card Total */}
-      <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-xl font-semibold text-slate-800 mb-2">
-              TOTAL CAPAIAN
-            </h2>
-            <p className="text-slate-600">
-              Rata-rata capaian keseluruhan aspek tata kelola perusahaan
-            </p>
-          </div>
-          <div className="text-right">
-            <div className="text-3xl font-bold text-blue-600">
-              {overallAchievement}%
+      <div className="mt-8 group relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 shadow-lg border border-blue-200/50 hover:shadow-xl transition-all duration-300">
+        <div className="absolute top-0 right-0 w-40 h-40 bg-blue-200/20 rounded-full -translate-y-20 translate-x-20"></div>
+        <div className="relative z-10">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-800 mb-3">
+                TOTAL CAPAIAN
+              </h2>
+              <p className="text-slate-600 text-lg">
+                Rata-rata capaian keseluruhan aspek tata kelola perusahaan
+              </p>
             </div>
-            <div className="text-sm text-slate-500">Total Capaian</div>
+            <div className="text-center">
+              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white shadow-xl mb-3">
+                <span className="text-3xl font-bold">
+                  {overallAchievement}%
+                </span>
+              </div>
+              <div className="text-sm text-slate-500 font-medium">
+                Total Capaian
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-        <h2 className="text-xl font-semibold text-slate-800 mb-2">
-          Tentang Sistem Tata Kelola
-        </h2>
-        <p className="text-slate-600 leading-relaxed">
-          Platform ini dirancang untuk membantu organisasi dalam menerapkan dan
-          memantau praktik tata kelola perusahaan yang baik. Setiap aspek
-          governance dapat dikelola dengan mudah melalui interface yang intuitif
-          dan komprehensif.
-        </p>
+      {/* Tabel Divisi */}
+      <div className="mb-8">
+        <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6">
+          <h2 className="text-2xl font-bold text-slate-800 mb-6 text-center">
+            TABEL DIVISI DAN CAPAIAN
+          </h2>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                  <th className="border border-slate-300 px-4 py-3 text-left font-semibold">
+                    No
+                  </th>
+                  <th className="border border-slate-300 px-4 py-3 text-left font-semibold">
+                    Divisi
+                  </th>
+                  <th className="border border-slate-300 px-4 py-3 text-center font-semibold">
+                    Bobot
+                  </th>
+                  <th className="border border-slate-300 px-4 py-3 text-center font-semibold">
+                    Skor
+                  </th>
+                  <th className="border border-slate-300 px-4 py-3 text-center font-semibold">
+                    Capaian %
+                  </th>
+                  <th className="border border-slate-300 px-4 py-3 text-center font-semibold">
+                    Status
+                  </th>
+                  <th className="border border-slate-300 px-4 py-3 text-center font-semibold">
+                    PIC
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    no: "1",
+                    divisi: "BOD-1",
+                    bobot: "15.0",
+                    skor: "12.75",
+                    capaian: "85.0",
+                    status: "Baik",
+                    pic: "Direktur Utama",
+                  },
+                  {
+                    no: "2",
+                    divisi: "KSPI",
+                    bobot: "12.0",
+                    skor: "10.8",
+                    capaian: "90.0",
+                    status: "Sangat Baik",
+                    pic: "Direktur KSPI",
+                  },
+                  {
+                    no: "3",
+                    divisi: "SETPER",
+                    bobot: "10.0",
+                    skor: "8.5",
+                    capaian: "85.0",
+                    status: "Baik",
+                    pic: "Direktur SETPER",
+                  },
+                  {
+                    no: "4",
+                    divisi: "AGA",
+                    bobot: "10.0",
+                    skor: "7.8",
+                    capaian: "78.0",
+                    status: "Baik",
+                    pic: "Direktur AGA",
+                  },
+                  {
+                    no: "5",
+                    divisi: "KEU",
+                    bobot: "12.0",
+                    skor: "11.04",
+                    capaian: "92.0",
+                    status: "Sangat Baik",
+                    pic: "Direktur Keuangan",
+                  },
+                  {
+                    no: "6",
+                    divisi: "OP",
+                    bobot: "15.0",
+                    skor: "12.0",
+                    capaian: "80.0",
+                    status: "Baik",
+                    pic: "Direktur Operasional",
+                  },
+                  {
+                    no: "7",
+                    divisi: "REN",
+                    bobot: "8.0",
+                    skor: "6.0",
+                    capaian: "75.0",
+                    status: "Cukup",
+                    pic: "Direktur Rencana",
+                  },
+                  {
+                    no: "8",
+                    divisi: "MHC",
+                    bobot: "8.0",
+                    skor: "6.4",
+                    capaian: "80.0",
+                    status: "Baik",
+                    pic: "Direktur MHC",
+                  },
+                  {
+                    no: "9",
+                    divisi: "HUKUM",
+                    bobot: "5.0",
+                    skor: "4.5",
+                    capaian: "90.0",
+                    status: "Sangat Baik",
+                    pic: "Direktur Hukum",
+                  },
+                  {
+                    no: "10",
+                    divisi: "MR",
+                    bobot: "5.0",
+                    skor: "4.25",
+                    capaian: "85.0",
+                    status: "Baik",
+                    pic: "Direktur MR",
+                  },
+                ].map((item, index) => (
+                  <tr
+                    key={index}
+                    className="hover:bg-slate-50 transition-colors"
+                  >
+                    <td className="border border-slate-300 px-4 py-3 text-center font-medium">
+                      {item.no}
+                    </td>
+                    <td className="border border-slate-300 px-4 py-3 text-left">
+                      <div className="font-medium text-slate-800">
+                        {item.divisi}
+                      </div>
+                    </td>
+                    <td className="border border-slate-300 px-4 py-3 text-center">
+                      <span className="font-semibold text-blue-600">
+                        {item.bobot}
+                      </span>
+                    </td>
+                    <td className="border border-slate-300 px-4 py-3 text-center">
+                      <span className="font-semibold text-green-600">
+                        {item.skor}
+                      </span>
+                    </td>
+                    <td className="border border-slate-300 px-4 py-3 text-center">
+                      <span className="font-semibold text-indigo-600">
+                        {item.capaian}%
+                      </span>
+                    </td>
+                    <td className="border border-slate-300 px-4 py-3 text-center">
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          item.status === "Sangat Baik"
+                            ? "bg-green-100 text-green-800"
+                            : item.status === "Baik"
+                            ? "bg-blue-100 text-blue-800"
+                            : item.status === "Cukup"
+                            ? "bg-yellow-100 text-yellow-800"
+                            : "bg-red-100 text-red-800"
+                        }`}
+                      >
+                        {item.status}
+                      </span>
+                    </td>
+                    <td className="border border-slate-300 px-4 py-3 text-center">
+                      <span className="text-slate-600 text-sm">{item.pic}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Summary Row */}
+          <div className="mt-4 p-4 bg-gradient-to-r from-slate-100 to-slate-200 rounded-lg">
+            <div className="grid grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-sm text-slate-600 mb-1">Total Bobot</div>
+                <div className="text-xl font-bold text-slate-800">100.0</div>
+              </div>
+              <div>
+                <div className="text-sm text-slate-600 mb-1">Total Skor</div>
+                <div className="text-xl font-bold text-slate-800">84.04</div>
+              </div>
+              <div>
+                <div className="text-sm text-slate-600 mb-1">
+                  Rata-rata Capaian
+                </div>
+                <div className="text-xl font-bold text-slate-800">84.0%</div>
+              </div>
+              <div>
+                <div className="text-sm text-slate-600 mb-1">
+                  Status Overall
+                </div>
+                <div className="text-xl font-bold text-green-600">Baik</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

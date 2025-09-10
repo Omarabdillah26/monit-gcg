@@ -334,7 +334,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           children: [
             {
               id: "2.1",
-              no: "1",
+              no: "3",
               penjelasanKriteria:
                 "Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) secara konsisten.",
               unsurPemenuhan: "",
@@ -449,7 +449,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
             {
               id: "2.2",
-              no: "2",
+              no: "4",
               penjelasanKriteria:
                 "Perusahaan melaksanakan Pedoman Perilaku secara konsisten.",
               unsurPemenuhan: "",
@@ -587,7 +587,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           children: [
             {
               id: "3.1",
-              no: "1",
+              no: "5",
               penjelasanKriteria:
                 "Perusahaan memiliki struktur organisasi yang jelas dan terdokumentasi.",
               unsurPemenuhan: "",
@@ -650,7 +650,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
             {
               id: "3.2",
-              no: "2",
+              no: "6",
               penjelasanKriteria:
                 "Perusahaan memiliki job description yang jelas untuk setiap posisi.",
               unsurPemenuhan: "",
@@ -736,7 +736,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           children: [
             {
               id: "4.1",
-              no: "1",
+              no: "7",
               penjelasanKriteria:
                 "Perusahaan memiliki sistem pengendalian internal yang terdokumentasi.",
               unsurPemenuhan: "",
@@ -800,7 +800,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
             {
               id: "4.2",
-              no: "2",
+              no: "8",
               penjelasanKriteria:
                 "Perusahaan melakukan monitoring dan evaluasi sistem pengendalian internal.",
               unsurPemenuhan: "",
@@ -886,7 +886,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           children: [
             {
               id: "5.1",
-              no: "1",
+              no: "9",
               penjelasanKriteria:
                 "Perusahaan memiliki sistem manajemen risiko yang terdokumentasi.",
               unsurPemenuhan: "",
@@ -949,7 +949,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
             {
               id: "5.2",
-              no: "2",
+              no: "10",
               penjelasanKriteria:
                 "Perusahaan melakukan identifikasi, analisis, dan mitigasi risiko.",
               unsurPemenuhan: "",
@@ -1036,7 +1036,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           children: [
             {
               id: "6.1",
-              no: "1",
+              no: "11",
               penjelasanKriteria:
                 "Perusahaan memiliki unit audit internal yang independen.",
               unsurPemenuhan: "",
@@ -1099,7 +1099,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
             {
               id: "6.2",
-              no: "2",
+              no: "12",
               penjelasanKriteria:
                 "Perusahaan melakukan audit internal secara berkala dan efektif.",
               unsurPemenuhan: "",
@@ -1185,7 +1185,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           children: [
             {
               id: "7.1",
-              no: "1",
+              no: "13",
               penjelasanKriteria:
                 "Perusahaan memiliki sistem pelaporan yang terdokumentasi.",
               unsurPemenuhan: "",
@@ -1247,7 +1247,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
             {
               id: "7.2",
-              no: "2",
+              no: "14",
               penjelasanKriteria:
                 "Perusahaan melakukan pelaporan secara berkala dan tepat waktu.",
               unsurPemenuhan: "",

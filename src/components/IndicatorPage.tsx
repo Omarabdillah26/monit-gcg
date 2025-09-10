@@ -1,9 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useScore } from "../contexts/ScoreContext";
 
-const IndicatorPage: React.FC = () => {
+interface IndicatorPageProps {
+  onNavigate?: (page: string) => void;
+}
+
+const IndicatorPage: React.FC<IndicatorPageProps> = ({ onNavigate }) => {
   const { getScoreWithFormula, getBobotWithFormula, scoreData } = useScore();
   const [dynamicData, setDynamicData] = useState<any[]>([]);
+
+  // Mapping untuk navigasi ke halaman yang sesuai
+  const getNavigationTarget = (section: string) => {
+    const sectionMap: { [key: string]: string } = {
+      "I. KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN":
+        "komitmen",
+      "II. RUPS/PEMILIK MODAL": "pemegang-saham",
+      "III. DEWAN KOMISARIS/DEWAN PENGAWAS": "dewan-komisaris",
+      "IV. DIREKSI": "direksi",
+      "V. PENGUNGKAPAN INFORMASI DAN TRANSPARANSI": "pengungkapan",
+      "VI. ASPEK LAINNYA": "aspek-lain",
+    };
+    return sectionMap[section] || "";
+  };
+
+  const handleDescriptionClick = (section: string) => {
+    const targetPage = getNavigationTarget(section);
+    if (targetPage && onNavigate) {
+      onNavigate(targetPage);
+    }
+  };
 
   const data = [
     // KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN
@@ -450,171 +475,272 @@ const IndicatorPage: React.FC = () => {
   // Effect to update dynamic data based on scores from KomitmenPage
   useEffect(() => {
     const updateDynamicData = () => {
-      const updatedData = data.map(section => {
-        if (section.section === "I. KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN") {
+      const updatedData = data.map((section) => {
+        if (
+          section.section ===
+          "I. KOMITMEN TERHADAP PENERAPAN TATA KELOLA SECARA BERKELANJUTAN"
+        ) {
           return {
             ...section,
-            items: section.items.map(item => {
-              if (item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance).") {
+            items: section.items.map((item) => {
+              if (
+                item.description ===
+                "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)."
+              ) {
                 // Get score from KomitmenPage for GCG Code using the specific formula
-                const gcgCodeScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) dan pedoman perilaku (code of conduct).");
-                const scoreValue = typeof gcgCodeScore === 'number' ? gcgCodeScore : parseFloat(gcgCodeScore as string) || 2.0;
-                
+                const gcgCodeScore = getScoreWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) dan pedoman perilaku (code of conduct)."
+                );
+                const scoreValue =
+                  typeof gcgCodeScore === "number"
+                    ? gcgCodeScore
+                    : parseFloat(gcgCodeScore as string) || 2.0;
+
                 // Get bobot from KomitmenPage for GCG Code using the specific formula
-                const gcgCodeBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) dan pedoman perilaku (code of conduct).");
-                const bobotValue = typeof gcgCodeBobot === 'number' ? gcgCodeBobot : parseFloat(gcgCodeBobot as string) || 3;
-                
+                const gcgCodeBobot = getBobotWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) dan pedoman perilaku (code of conduct)."
+                );
+                const bobotValue =
+                  typeof gcgCodeBobot === "number"
+                    ? gcgCodeBobot
+                    : parseFloat(gcgCodeBobot as string) || 3;
+
                 // Calculate achievement using Excel formula: =skor/bobot*100
-                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementValue =
+                  bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
                 const achievementPercentage = `${achievementValue.toFixed(2)}%`;
-                
+
                 return {
                   ...item,
                   weight: bobotValue,
                   score: scoreValue,
                   rawValue: scoreValue,
-                  achievement: achievementPercentage
+                  achievement: achievementPercentage,
                 };
               }
-              
-              if (item.description === "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance).") {
+
+              if (
+                item.description ===
+                "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)."
+              ) {
                 // Get score from KomitmenPage for Pelaksanaan using the specific formula
-                const pelaksanaanScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten.");
-                const scoreValue = typeof pelaksanaanScore === 'number' ? pelaksanaanScore : parseFloat(pelaksanaanScore as string) || 2.0;
-                
+                const pelaksanaanScore = getScoreWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten."
+                );
+                const scoreValue =
+                  typeof pelaksanaanScore === "number"
+                    ? pelaksanaanScore
+                    : parseFloat(pelaksanaanScore as string) || 2.0;
+
                 // Get bobot from KomitmenPage for Pelaksanaan using the specific formula
-                const pelaksanaanBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten.");
-                const bobotValue = typeof pelaksanaanBobot === 'number' ? pelaksanaanBobot : parseFloat(pelaksanaanBobot as string) || 3;
-                
+                const pelaksanaanBobot = getBobotWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten."
+                );
+                const bobotValue =
+                  typeof pelaksanaanBobot === "number"
+                    ? pelaksanaanBobot
+                    : parseFloat(pelaksanaanBobot as string) || 3;
+
                 // Calculate achievement using Excel formula: =skor/bobot*100
-                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementValue =
+                  bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
                 const achievementPercentage = `${achievementValue.toFixed(2)}%`;
-                
+
                 return {
                   ...item,
                   weight: bobotValue,
                   score: scoreValue,
                   rawValue: scoreValue,
-                  achievement: achievementPercentage
+                  achievement: achievementPercentage,
                 };
               }
-              
-              if (item.description === "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik.") {
+
+              if (
+                item.description ===
+                "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik."
+              ) {
                 // Get score from KomitmenPage for Struktur using the specific formula
-                const strukturScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik.");
-                const scoreValue = typeof strukturScore === 'number' ? strukturScore : parseFloat(strukturScore as string) || 2.0;
-                
+                const strukturScore = getScoreWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik."
+                );
+                const scoreValue =
+                  typeof strukturScore === "number"
+                    ? strukturScore
+                    : parseFloat(strukturScore as string) || 2.0;
+
                 // Get bobot from KomitmenPage for Struktur using the specific formula
-                const strukturBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik.");
-                const bobotValue = typeof strukturBobot === 'number' ? strukturBobot : parseFloat(strukturBobot as string) || 3;
-                
+                const strukturBobot = getBobotWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik."
+                );
+                const bobotValue =
+                  typeof strukturBobot === "number"
+                    ? strukturBobot
+                    : parseFloat(strukturBobot as string) || 3;
+
                 // Calculate achievement using Excel formula: =skor/bobot*100
-                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementValue =
+                  bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
                 const achievementPercentage = `${achievementValue.toFixed(2)}%`;
-                
+
                 return {
                   ...item,
                   weight: bobotValue,
                   score: scoreValue,
                   rawValue: scoreValue,
-                  achievement: achievementPercentage
+                  achievement: achievementPercentage,
                 };
               }
-              
-              if (item.description === "Perusahaan memiliki sistem pengendalian internal yang efektif.") {
+
+              if (
+                item.description ===
+                "Perusahaan memiliki sistem pengendalian internal yang efektif."
+              ) {
                 // Get score from KomitmenPage for SPI using the specific formula
-                const spiScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pengendalian internal yang efektif.");
-                const scoreValue = typeof spiScore === 'number' ? spiScore : parseFloat(spiScore as string) || 2.0;
-                
+                const spiScore = getScoreWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pengendalian internal yang efektif."
+                );
+                const scoreValue =
+                  typeof spiScore === "number"
+                    ? spiScore
+                    : parseFloat(spiScore as string) || 2.0;
+
                 // Get bobot from KomitmenPage for SPI using the specific formula
-                const spiBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pengendalian internal yang efektif.");
-                const bobotValue = typeof spiBobot === 'number' ? spiBobot : parseFloat(spiBobot as string) || 3;
-                
+                const spiBobot = getBobotWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pengendalian internal yang efektif."
+                );
+                const bobotValue =
+                  typeof spiBobot === "number"
+                    ? spiBobot
+                    : parseFloat(spiBobot as string) || 3;
+
                 // Calculate achievement using Excel formula: =skor/bobot*100
-                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementValue =
+                  bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
                 const achievementPercentage = `${achievementValue.toFixed(2)}%`;
-                
+
                 return {
                   ...item,
                   weight: bobotValue,
                   score: scoreValue,
                   rawValue: scoreValue,
-                  achievement: achievementPercentage
+                  achievement: achievementPercentage,
                 };
               }
-              
-              if (item.description === "Perusahaan memiliki sistem manajemen risiko yang efektif.") {
+
+              if (
+                item.description ===
+                "Perusahaan memiliki sistem manajemen risiko yang efektif."
+              ) {
                 // Get score from KomitmenPage for SMR using the specific formula
-                const smrScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem manajemen risiko yang efektif.");
-                const scoreValue = typeof smrScore === 'number' ? smrScore : parseFloat(smrScore as string) || 2.0;
-                
+                const smrScore = getScoreWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem manajemen risiko yang efektif."
+                );
+                const scoreValue =
+                  typeof smrScore === "number"
+                    ? smrScore
+                    : parseFloat(smrScore as string) || 2.0;
+
                 // Get bobot from KomitmenPage for SMR using the specific formula
-                const smrBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem manajemen risiko yang efektif.");
-                const bobotValue = typeof smrBobot === 'number' ? smrBobot : parseFloat(smrBobot as string) || 3;
-                
+                const smrBobot = getBobotWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem manajemen risiko yang efektif."
+                );
+                const bobotValue =
+                  typeof smrBobot === "number"
+                    ? smrBobot
+                    : parseFloat(smrBobot as string) || 3;
+
                 // Calculate achievement using Excel formula: =skor/bobot*100
-                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementValue =
+                  bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
                 const achievementPercentage = `${achievementValue.toFixed(2)}%`;
-                
+
                 return {
                   ...item,
                   weight: bobotValue,
                   score: scoreValue,
                   rawValue: scoreValue,
-                  achievement: achievementPercentage
+                  achievement: achievementPercentage,
                 };
               }
-              
-              if (item.description === "Perusahaan memiliki sistem audit internal yang efektif.") {
+
+              if (
+                item.description ===
+                "Perusahaan memiliki sistem audit internal yang efektif."
+              ) {
                 // Get score from KomitmenPage for Audit using the specific formula
-                const auditScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem audit internal yang efektif.");
-                const scoreValue = typeof auditScore === 'number' ? auditScore : parseFloat(auditScore as string) || 2.0;
-                
+                const auditScore = getScoreWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem audit internal yang efektif."
+                );
+                const scoreValue =
+                  typeof auditScore === "number"
+                    ? auditScore
+                    : parseFloat(auditScore as string) || 2.0;
+
                 // Get bobot from KomitmenPage for Audit using the specific formula
-                const auditBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem audit internal yang efektif.");
-                const bobotValue = typeof auditBobot === 'number' ? auditBobot : parseFloat(auditBobot as string) || 3;
-                
+                const auditBobot = getBobotWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem audit internal yang efektif."
+                );
+                const bobotValue =
+                  typeof auditBobot === "number"
+                    ? auditBobot
+                    : parseFloat(auditBobot as string) || 3;
+
                 // Calculate achievement using Excel formula: =skor/bobot*100
-                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementValue =
+                  bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
                 const achievementPercentage = `${achievementValue.toFixed(2)}%`;
-                
+
                 return {
                   ...item,
                   weight: bobotValue,
                   score: scoreValue,
                   rawValue: scoreValue,
-                  achievement: achievementPercentage
+                  achievement: achievementPercentage,
                 };
               }
-              
-              if (item.description === "Perusahaan memiliki sistem pelaporan yang efektif.") {
+
+              if (
+                item.description ===
+                "Perusahaan memiliki sistem pelaporan yang efektif."
+              ) {
                 // Get score from KomitmenPage for Pelaporan using the specific formula
-                const pelaporanScore = getScoreWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pelaporan yang efektif.");
-                const scoreValue = typeof pelaporanScore === 'number' ? pelaporanScore : parseFloat(pelaporanScore as string) || 2.0;
-                
+                const pelaporanScore = getScoreWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pelaporan yang efektif."
+                );
+                const scoreValue =
+                  typeof pelaporanScore === "number"
+                    ? pelaporanScore
+                    : parseFloat(pelaporanScore as string) || 2.0;
+
                 // Get bobot from KomitmenPage for Pelaporan using the specific formula
-                const pelaporanBobot = getBobotWithFormula("=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pelaporan yang efektif.");
-                const bobotValue = typeof pelaporanBobot === 'number' ? pelaporanBobot : parseFloat(pelaporanBobot as string) || 3;
-                
+                const pelaporanBobot = getBobotWithFormula(
+                  "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pelaporan yang efektif."
+                );
+                const bobotValue =
+                  typeof pelaporanBobot === "number"
+                    ? pelaporanBobot
+                    : parseFloat(pelaporanBobot as string) || 3;
+
                 // Calculate achievement using Excel formula: =skor/bobot*100
-                const achievementValue = bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
+                const achievementValue =
+                  bobotValue > 0 ? (scoreValue / bobotValue) * 100 : 0;
                 const achievementPercentage = `${achievementValue.toFixed(2)}%`;
-                
+
                 return {
                   ...item,
                   weight: bobotValue,
                   score: scoreValue,
                   rawValue: scoreValue,
-                  achievement: achievementPercentage
+                  achievement: achievementPercentage,
                 };
               }
               return item;
-            })
+            }),
           };
         }
         return section;
       });
-      
+
       setDynamicData(updatedData);
     };
 
@@ -646,9 +772,14 @@ const IndicatorPage: React.FC = () => {
           Detail penilaian setiap aspek tata kelola perusahaan dengan bobot,
           skor, dan capaian
         </p>
+        <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <p className="text-blue-800 text-sm">
+            💡 <strong>Tips:</strong> Klik pada penjelasan kriteria untuk
+            melihat detail lengkap di halaman yang sesuai di Dashboard.
+          </p>
+        </div>
         {Object.keys(scoreData).length > 0 && (
-          <div className="mt-4 p-3 bg-white-50 border border-white-200 rounded-lg">
-          </div>
+          <div className="mt-4 p-3 bg-white-50 border border-white-200 rounded-lg"></div>
         )}
       </div>
 
@@ -709,33 +840,62 @@ const IndicatorPage: React.FC = () => {
                       {item.no}
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-left">
-                      {item.description}
+                      <button
+                        onClick={() => handleDescriptionClick(section.section)}
+                        className="text-left text-blue-600 hover:text-blue-800 hover:underline cursor-pointer transition-all duration-200 hover:bg-blue-50 p-2 rounded-md w-full text-left"
+                        title={`Klik untuk melihat detail di halaman ${section.section}`}
+                      >
+                        <span className="flex items-start">
+                          <span className="mr-2 text-blue-400">🔗</span>
+                          {item.description}
+                        </span>
+                      </button>
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center">
                       <div className="flex items-center justify-center space-x-1">
                         <span>{item.weight}</span>
-                        {(item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
-                          item.description === "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
-                          item.description === "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik." ||
-                          item.description === "Perusahaan memiliki sistem pengendalian internal yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem manajemen risiko yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem audit internal yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem pelaporan yang efektif.") && (
-                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen"></span>
+                        {(item.description ===
+                          "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
+                          item.description ===
+                            "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
+                          item.description ===
+                            "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem pengendalian internal yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem manajemen risiko yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem audit internal yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem pelaporan yang efektif.") && (
+                          <span
+                            className="text-blue-500"
+                            title="Terhubung dengan halaman Komitmen"
+                          ></span>
                         )}
                       </div>
                     </td>
                     <td className="border border-slate-300 px-3 py-2 text-center">
                       <div className="flex items-center justify-center space-x-1">
                         <span>{item.score}</span>
-                        {(item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
-                          item.description === "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
-                          item.description === "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik." ||
-                          item.description === "Perusahaan memiliki sistem pengendalian internal yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem manajemen risiko yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem audit internal yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem pelaporan yang efektif.") && (
-                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen"></span>
+                        {(item.description ===
+                          "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
+                          item.description ===
+                            "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
+                          item.description ===
+                            "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem pengendalian internal yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem manajemen risiko yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem audit internal yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem pelaporan yang efektif.") && (
+                          <span
+                            className="text-blue-500"
+                            title="Terhubung dengan halaman Komitmen"
+                          ></span>
                         )}
                       </div>
                     </td>
@@ -751,14 +911,24 @@ const IndicatorPage: React.FC = () => {
                     >
                       <div className="flex items-center justify-center space-x-1">
                         <span>{item.achievement}</span>
-                        {(item.description === "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
-                          item.description === "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
-                          item.description === "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik." ||
-                          item.description === "Perusahaan memiliki sistem pengendalian internal yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem manajemen risiko yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem audit internal yang efektif." ||
-                          item.description === "Perusahaan memiliki sistem pelaporan yang efektif.") && (
-                          <span className="text-blue-500" title="Terhubung dengan halaman Komitmen (rumus: =skor/bobot*100)"></span>
+                        {(item.description ===
+                          "Perusahaan memiliki komitmen tertulis untuk menerapkan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
+                          item.description ===
+                            "Perusahaan memiliki kebijakan Tata Kelola Perusahaan yang Baik (Good Corporate Governance)." ||
+                          item.description ===
+                            "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem pengendalian internal yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem manajemen risiko yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem audit internal yang efektif." ||
+                          item.description ===
+                            "Perusahaan memiliki sistem pelaporan yang efektif.") && (
+                          <span
+                            className="text-blue-500"
+                            title="Terhubung dengan halaman Komitmen (rumus: =skor/bobot*100)"
+                          ></span>
                         )}
                       </div>
                     </td>
@@ -820,11 +990,22 @@ const IndicatorPage: React.FC = () => {
       <div className="mt-8 bg-blue-50 rounded-lg p-4 border border-blue-200">
         <h3 className="font-semibold text-blue-800 mb-2">Keterangan:</h3>
         <div className="text-sm text-blue-700 space-y-1">
-          <p>• 🔗 Skor, Bobot, dan Capaian dengan ikon link terhubung dengan halaman Komitmen secara real-time</p>
-          <p>• Perubahan data di halaman Komitmen akan otomatis terupdate di halaman ini</p>
-          <p>• Formula referensi seperti Excel: =Komitmen!SKOR Indikator dan =Komitmen!BOBOT</p>
+          <p>
+            • 🔗 Skor, Bobot, dan Capaian dengan ikon link terhubung dengan
+            halaman Komitmen secara real-time
+          </p>
+          <p>
+            • Perubahan data di halaman Komitmen akan otomatis terupdate di
+            halaman ini
+          </p>
+          <p>
+            • Formula referensi seperti Excel: =Komitmen!SKOR Indikator dan
+            =Komitmen!BOBOT
+          </p>
           <p>• Rumus Capaian: =skor/bobot*100 (otomatis terhitung)</p>
-          <p>• Data sesuai dengan struktur penilaian Good Corporate Governance</p>
+          <p>
+            • Data sesuai dengan struktur penilaian Good Corporate Governance
+          </p>
         </div>
       </div>
     </div>
