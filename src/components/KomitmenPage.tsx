@@ -548,6 +548,736 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
             },
           ],
         },
+        {
+          id: "3",
+          no: "3",
+          penjelasanKriteria:
+            "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator: "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "3.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki struktur organisasi yang jelas dan terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "3.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat struktur organisasi yang terdokumentasi dengan jelas.",
+                  unsurPemenuhan: "Ada struktur organisasi yang terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "SK Direksi, Struktur Organisasi",
+                  keteranganDokumen: "Struktur organisasi sudah terdokumentasi dengan baik",
+                },
+                {
+                  id: "3.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Struktur organisasi mendukung penerapan GCG secara efektif.",
+                  unsurPemenuhan: "Struktur organisasi mendukung penerapan GCG",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Analisis Struktur, Laporan GCG",
+                  keteranganDokumen: "Struktur organisasi mendukung GCG",
+                },
+              ],
+            },
+            {
+              id: "3.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan memiliki job description yang jelas untuk setiap posisi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "3.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat job description yang jelas untuk setiap posisi.",
+                  unsurPemenuhan: "Ada job description untuk setiap posisi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Job Description, SK Direksi",
+                  keteranganDokumen: "Job description sudah lengkap dan jelas",
+                },
+                {
+                  id: "3.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Job description ditinjau dan dimutakhirkan secara berkala.",
+                  unsurPemenuhan: "Job description ditinjau dan dimutakhirkan berkala",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Review, Update Job Description",
+                  keteranganDokumen: "Job description direview secara berkala",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "4",
+          no: "4",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem pengendalian internal yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator: "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pengendalian internal yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "4.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki sistem pengendalian internal yang terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "4.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat sistem pengendalian internal yang terdokumentasi.",
+                  unsurPemenuhan: "Ada sistem pengendalian internal terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Manual SPI, Prosedur Internal",
+                  keteranganDokumen: "Sistem pengendalian internal sudah terdokumentasi",
+                },
+                {
+                  id: "4.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Sistem pengendalian internal diimplementasikan secara efektif.",
+                  unsurPemenuhan: "SPI diimplementasikan secara efektif",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Implementasi, Audit Internal",
+                  keteranganDokumen: "SPI diimplementasikan dengan efektif",
+                },
+              ],
+            },
+            {
+              id: "4.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan monitoring dan evaluasi sistem pengendalian internal.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "4.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat monitoring sistem pengendalian internal secara berkala.",
+                  unsurPemenuhan: "Ada monitoring SPI secara berkala",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Monitoring, Jadwal Review",
+                  keteranganDokumen: "Monitoring SPI dilakukan secara berkala",
+                },
+                {
+                  id: "4.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Terdapat evaluasi dan perbaikan sistem pengendalian internal.",
+                  unsurPemenuhan: "Ada evaluasi dan perbaikan SPI",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Evaluasi, Action Plan",
+                  keteranganDokumen: "Evaluasi dan perbaikan SPI berjalan rutin",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "5",
+          no: "5",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem manajemen risiko yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator: "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem manajemen risiko yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "5.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki sistem manajemen risiko yang terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "5.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat sistem manajemen risiko yang terdokumentasi.",
+                  unsurPemenuhan: "Ada sistem manajemen risiko terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Manual Manajemen Risiko, Prosedur",
+                  keteranganDokumen: "Sistem manajemen risiko sudah terdokumentasi",
+                },
+                {
+                  id: "5.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Sistem manajemen risiko diimplementasikan secara efektif.",
+                  unsurPemenuhan: "SMR diimplementasikan secara efektif",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Implementasi, Risk Register",
+                  keteranganDokumen: "SMR diimplementasikan dengan efektif",
+                },
+              ],
+            },
+            {
+              id: "5.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan identifikasi, analisis, dan mitigasi risiko.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "5.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat identifikasi risiko secara berkala.",
+                  unsurPemenuhan: "Ada identifikasi risiko secara berkala",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Risk Register, Laporan Identifikasi",
+                  keteranganDokumen: "Identifikasi risiko dilakukan secara berkala",
+                },
+                {
+                  id: "5.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Terdapat analisis dan mitigasi risiko yang efektif.",
+                  unsurPemenuhan: "Ada analisis dan mitigasi risiko efektif",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Risk Assessment, Mitigation Plan",
+                  keteranganDokumen: "Analisis dan mitigasi risiko berjalan efektif",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "6",
+          no: "6",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem audit internal yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator: "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem audit internal yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "6.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki unit audit internal yang independen.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "6.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat unit audit internal yang independen.",
+                  unsurPemenuhan: "Ada unit audit internal independen",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "SK Unit Audit, Struktur Organisasi",
+                  keteranganDokumen: "Unit audit internal sudah independen",
+                },
+                {
+                  id: "6.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Unit audit internal memiliki kompetensi yang memadai.",
+                  unsurPemenuhan: "Unit audit internal memiliki kompetensi memadai",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "CV Auditor, Sertifikat Kompetensi",
+                  keteranganDokumen: "Kompetensi auditor sudah memadai",
+                },
+              ],
+            },
+            {
+              id: "6.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan audit internal secara berkala dan efektif.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "6.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat program audit internal yang terjadwal.",
+                  unsurPemenuhan: "Ada program audit internal terjadwal",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Program Audit, Jadwal Audit",
+                  keteranganDokumen: "Program audit internal sudah terjadwal",
+                },
+                {
+                  id: "6.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Audit internal dilaksanakan secara efektif dan independen.",
+                  unsurPemenuhan: "Audit internal dilaksanakan efektif dan independen",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Audit, Follow-up Action",
+                  keteranganDokumen: "Audit internal dilaksanakan efektif",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: "7",
+          no: "7",
+          penjelasanKriteria:
+            "Perusahaan memiliki sistem pelaporan yang efektif.",
+          unsurPemenuhan: "",
+          bobot: "1.218",
+          capaianSub: "",
+          capaianTotal: "1.000",
+          skorParameter: "",
+          skorIndikator: "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki sistem pelaporan yang efektif.",
+          skorAspek: "",
+          capaianPersen: "",
+          pemenuhanDokumen: "",
+          files: [] as FileData[],
+          status: "",
+          rekomendasi: "",
+          sumberDokumen: "",
+          keteranganDokumen: "",
+          children: [
+            {
+              id: "7.1",
+              no: "1",
+              penjelasanKriteria:
+                "Perusahaan memiliki sistem pelaporan yang terdokumentasi.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "7.1.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat sistem pelaporan yang terdokumentasi dengan jelas.",
+                  unsurPemenuhan: "Ada sistem pelaporan terdokumentasi",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Manual Pelaporan, Prosedur",
+                  keteranganDokumen: "Sistem pelaporan sudah terdokumentasi",
+                },
+                {
+                  id: "7.1.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Sistem pelaporan mencakup semua aspek yang diperlukan.",
+                  unsurPemenuhan: "Sistem pelaporan mencakup semua aspek",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Template Laporan, Checklist",
+                  keteranganDokumen: "Sistem pelaporan sudah komprehensif",
+                },
+              ],
+            },
+            {
+              id: "7.2",
+              no: "2",
+              penjelasanKriteria:
+                "Perusahaan melakukan pelaporan secara berkala dan tepat waktu.",
+              unsurPemenuhan: "",
+              bobot: "0.609",
+              capaianSub: "",
+              capaianTotal: "1.000",
+              skorParameter: "0.609",
+              skorIndikator: "",
+              skorAspek: "",
+              capaianPersen: "",
+              pemenuhanDokumen: "",
+              files: [] as FileData[],
+              status: "",
+              rekomendasi: "",
+              sumberDokumen: "",
+              keteranganDokumen: "",
+              children: [
+                {
+                  id: "7.2.1",
+                  no: "(1)",
+                  penjelasanKriteria:
+                    "Terdapat jadwal pelaporan yang jelas dan terjadwal.",
+                  unsurPemenuhan: "Ada jadwal pelaporan jelas dan terjadwal",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Jadwal Pelaporan, Kalender",
+                  keteranganDokumen: "Jadwal pelaporan sudah jelas",
+                },
+                {
+                  id: "7.2.2",
+                  no: "(2)",
+                  penjelasanKriteria:
+                    "Pelaporan dilakukan tepat waktu dan berkualitas.",
+                  unsurPemenuhan: "Pelaporan tepat waktu dan berkualitas",
+                  bobot: "",
+                  capaianSub: "",
+                  capaianTotal: "1",
+                  skorParameter: "",
+                  skorIndikator: "",
+                  skorAspek: "",
+                  capaianPersen: "100%",
+                  pemenuhanDokumen: "Ada",
+                  files: [] as FileData[],
+                  status: "Ada",
+                  rekomendasi: "Pertahankan",
+                  sumberDokumen: "Laporan Berkala, Quality Check",
+                  keteranganDokumen: "Pelaporan berkualitas dan tepat waktu",
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
   ]);
@@ -576,6 +1306,66 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
         // Update bobot for the same item
         if (pelaksanaanItem.bobot) {
           updateBobot('komitmen_pelaksanaan', pelaksanaanItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik."
+      const strukturItem = tableData[0]?.children?.[2];
+      if (strukturItem) {
+        const skorIndikator = getSumOfChildParameters(strukturItem);
+        updateScore('komitmen_struktur', skorIndikator);
+        
+        // Update bobot for the same item
+        if (strukturItem.bobot) {
+          updateBobot('komitmen_struktur', strukturItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem pengendalian internal yang efektif."
+      const spiItem = tableData[0]?.children?.[3];
+      if (spiItem) {
+        const skorIndikator = getSumOfChildParameters(spiItem);
+        updateScore('komitmen_spi', skorIndikator);
+        
+        // Update bobot for the same item
+        if (spiItem.bobot) {
+          updateBobot('komitmen_spi', spiItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem manajemen risiko yang efektif."
+      const smrItem = tableData[0]?.children?.[4];
+      if (smrItem) {
+        const skorIndikator = getSumOfChildParameters(smrItem);
+        updateScore('komitmen_smr', skorIndikator);
+        
+        // Update bobot for the same item
+        if (smrItem.bobot) {
+          updateBobot('komitmen_smr', smrItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem audit internal yang efektif."
+      const auditItem = tableData[0]?.children?.[5];
+      if (auditItem) {
+        const skorIndikator = getSumOfChildParameters(auditItem);
+        updateScore('komitmen_audit', skorIndikator);
+        
+        // Update bobot for the same item
+        if (auditItem.bobot) {
+          updateBobot('komitmen_audit', auditItem.bobot);
+        }
+      }
+
+      // Update score for "Perusahaan memiliki sistem pelaporan yang efektif."
+      const pelaporanItem = tableData[0]?.children?.[6];
+      if (pelaporanItem) {
+        const skorIndikator = getSumOfChildParameters(pelaporanItem);
+        updateScore('komitmen_pelaporan', skorIndikator);
+        
+        // Update bobot for the same item
+        if (pelaporanItem.bobot) {
+          updateBobot('komitmen_pelaporan', pelaporanItem.bobot);
         }
       }
     };
@@ -1168,7 +1958,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
               ) : (
                 "-"
               )}
-              {(item.id === "1" || item.id === "2") && (
+              {(item.id === "1" || item.id === "2" || item.id === "3" || item.id === "4" || item.id === "5" || item.id === "6" || item.id === "7") && (
                 <span className="text-blue-500" title="Terhubung dengan halaman Indikator"></span>
               )}
             </div>

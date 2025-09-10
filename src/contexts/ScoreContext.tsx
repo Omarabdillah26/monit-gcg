@@ -98,6 +98,16 @@ export const ScoreProvider: React.FC<ScoreProviderProps> = ({ children }) => {
           return getScore('komitmen_gcg_code');
         } else if (description.includes('Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten')) {
           return getScore('komitmen_pelaksanaan');
+        } else if (description.includes('Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik')) {
+          return getScore('komitmen_struktur');
+        } else if (description.includes('Perusahaan memiliki sistem pengendalian internal yang efektif')) {
+          return getScore('komitmen_spi');
+        } else if (description.includes('Perusahaan memiliki sistem manajemen risiko yang efektif')) {
+          return getScore('komitmen_smr');
+        } else if (description.includes('Perusahaan memiliki sistem audit internal yang efektif')) {
+          return getScore('komitmen_audit');
+        } else if (description.includes('Perusahaan memiliki sistem pelaporan yang efektif')) {
+          return getScore('komitmen_pelaporan');
         }
         
         // Fallback to generic key generation
@@ -134,6 +144,16 @@ export const ScoreProvider: React.FC<ScoreProviderProps> = ({ children }) => {
           return getBobot('komitmen_gcg_code');
         } else if (description.includes('Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten')) {
           return getBobot('komitmen_pelaksanaan');
+        } else if (description.includes('Perusahaan memiliki struktur organisasi yang mendukung penerapan Tata Kelola Perusahaan yang Baik')) {
+          return getBobot('komitmen_struktur');
+        } else if (description.includes('Perusahaan memiliki sistem pengendalian internal yang efektif')) {
+          return getBobot('komitmen_spi');
+        } else if (description.includes('Perusahaan memiliki sistem manajemen risiko yang efektif')) {
+          return getBobot('komitmen_smr');
+        } else if (description.includes('Perusahaan memiliki sistem audit internal yang efektif')) {
+          return getBobot('komitmen_audit');
+        } else if (description.includes('Perusahaan memiliki sistem pelaporan yang efektif')) {
+          return getBobot('komitmen_pelaporan');
         }
         
         // Fallback to generic key generation
