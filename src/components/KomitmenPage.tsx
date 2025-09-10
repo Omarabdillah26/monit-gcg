@@ -60,7 +60,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           capaianSub: "",
           capaianTotal: "",
           skorParameter: "",
-          skorIndikator: "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) yang ditinjau dan dimutakhirkan secara berkala.",
+          skorIndikator:
+            "=Capaian FUK & Prm kategori Total bagian Perusahaan memiliki Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) yang ditinjau dan dimutakhirkan secara berkala.",
           skorAspek: "",
           capaianPersen: "",
           pemenuhanDokumen: "",
@@ -114,17 +115,18 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                     },
                   ] as FileData[],
                   status: "Ada",
-              rekomendasi: "Pertahankan",
+                  rekomendasi: "Pertahankan",
                   sumberDokumen: "SK Dewan Komisaris, Notulen Rapat",
                   keteranganDokumen:
                     "Dokumen GCG sudah lengkap dan sesuai standar",
-            },
-            {
-              id: "1.1.2",
+                },
+                {
+                  id: "1.1.2",
                   no: "(2)",
-              penjelasanKriteria:
+                  penjelasanKriteria:
                     "Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) ditandatangani oleh Organ BUMN atau dikukuhkan RUPS..",
-                  unsurPemenuhan: "1. Disahkan oleh Direksi saja 2. Disahkan oleh Direksi dan Dewan Komisaris atau dikukuhkan RUPS",
+                  unsurPemenuhan:
+                    "1. Disahkan oleh Direksi saja 2. Disahkan oleh Direksi dan Dewan Komisaris atau dikukuhkan RUPS",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -135,17 +137,18 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   pemenuhanDokumen: "Ada",
                   files: [] as FileData[],
                   status: "Ada",
-              rekomendasi: "Pertahankan",
+                  rekomendasi: "Pertahankan",
                   sumberDokumen: "Laporan Sosialisasi, Daftar Hadir",
                   keteranganDokumen:
                     "Sudah ditandatangani oleh Dewan Komisaris",
-            },
-            {
-              id: "1.1.3",
+                },
+                {
+                  id: "1.1.3",
                   no: "(3)",
                   penjelasanKriteria:
                     "Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) paling sedikit mengacu kepada Pedoman Penerapan Tata Kelola Perusahaan yang Baik (Good Corporate Governance) bagi Badan Usaha Milik Negara, Pedoman Sektoral (jika ada) dan/atau peraturan sektoral.",
-                  unsurPemenuhan: "Muatan Pedoman GCG mencakup ketentuan penerapan GCG sesuai PER-01/MBU/2011 (pasal 2 ayat 2) dan hal-hal lain mengikuti peraturan sektoral yang sekurangnya mengatur tentang organ utama perusahaan dan governance policy perusahaan",
+                  unsurPemenuhan:
+                    "Muatan Pedoman GCG mencakup ketentuan penerapan GCG sesuai PER-01/MBU/2011 (pasal 2 ayat 2) dan hal-hal lain mengikuti peraturan sektoral yang sekurangnya mengatur tentang organ utama perusahaan dan governance policy perusahaan",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -163,9 +166,10 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                 {
                   id: "1.1.4",
                   no: "(4)",
-              penjelasanKriteria:
+                  penjelasanKriteria:
                     "Pedoman Tata Kelola Perusahaan yang Baik (GCG Code) ditinjau dan dimutakhirkan secara berkala.",
-                  unsurPemenuhan: "1. Adanya pembahasan/kajian atas kebutuhan pemutakhiran Pedoman GCG (yang dilakukan minimal 3 (tiga) tahun sekali atau sesuai kebutuhan perubahan peraturan/kondisi yang signifikan). 2. Pedoman telah dimutakhirkan 3. Pedoman yang dimutakhirkan telah disahkan Direksi dan Komisaris atau dikukuhkan RUPS.",
+                  unsurPemenuhan:
+                    "1. Adanya pembahasan/kajian atas kebutuhan pemutakhiran Pedoman GCG (yang dilakukan minimal 3 (tiga) tahun sekali atau sesuai kebutuhan perubahan peraturan/kondisi yang signifikan). 2. Pedoman telah dimutakhirkan 3. Pedoman yang dimutakhirkan telah disahkan Direksi dan Komisaris atau dikukuhkan RUPS.",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -176,7 +180,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   pemenuhanDokumen: "Ada",
                   files: [] as FileData[],
                   status: "Ada",
-              rekomendasi: "Pertahankan",
+                  rekomendasi: "Pertahankan",
                   sumberDokumen: "Dokumen Review, Laporan Update",
                   keteranganDokumen: "Dokumen direview setiap tahun",
                 },
@@ -205,8 +209,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                 {
                   id: "1.2.1",
                   no: "(1)",
-                  penjelasanKriteria:
-                    "Terdapat Pedoman Perilaku.",
+                  penjelasanKriteria: "Terdapat Pedoman Perilaku.",
                   unsurPemenuhan: "Ada Pedoman Perilaku",
                   bobot: "",
                   capaianSub: "",
@@ -236,7 +239,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   no: "(2)",
                   penjelasanKriteria:
                     "Pedoman Perilaku ditandatangani oleh Direksi atau dikukuhkan RUPS.",
-                  unsurPemenuhan: "1. Disahkan oleh Direksi saja 2. Disahkan oleh Direksi dan Dewan Komisaris atau dikukuhkan RUPS",
+                  unsurPemenuhan:
+                    "1. Disahkan oleh Direksi saja 2. Disahkan oleh Direksi dan Dewan Komisaris atau dikukuhkan RUPS",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -249,15 +253,14 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   status: "Ada",
                   rekomendasi: "Pertahankan",
                   sumberDokumen: "Laporan Sosialisasi, Daftar Hadir",
-                  keteranganDokumen:
-                    "Sudah ditandatangani oleh Direksi",
+                  keteranganDokumen: "Sudah ditandatangani oleh Direksi",
                 },
                 {
                   id: "1.2.1",
                   no: "(1)",
-                  penjelasanKriteria:
-                    "Terdapat Pedoman Perilaku.",
-                  unsurPemenuhan: "1. Adanya pernyataan komitmen yang mencakup komitmen Direksi dan Komisaris/Dewan Pengawas untuk mematuhi Code of Conduct.",
+                  penjelasanKriteria: "Terdapat Pedoman Perilaku.",
+                  unsurPemenuhan:
+                    "1. Adanya pernyataan komitmen yang mencakup komitmen Direksi dan Komisaris/Dewan Pengawas untuk mematuhi Code of Conduct.",
                   bobot: "",
                   capaianSub: "1",
                   capaianTotal: "",
@@ -281,7 +284,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   keteranganDokumen:
                     "Dokumen Pedoman Perilaku sudah lengkap dan sesuai standar",
                 },
-                
+
                 // {
                 //   id: "1.2.4",
                 //   no: "(4)",
@@ -316,7 +319,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           capaianSub: "",
           capaianTotal: "1.000",
           skorParameter: "",
-          skorIndikator: "=Capaian FUK & Prm kategori Total bagian Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten.",
+          skorIndikator:
+            "=Capaian FUK & Prm kategori Total bagian Perusahaan melaksanakan Pedoman Tata Kelola Perusahaan yang Baik dan Pedoman Perilaku secara konsisten.",
           skorAspek: "",
           capaianPersen: "",
           pemenuhanDokumen: "",
@@ -351,7 +355,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   no: "(1)",
                   penjelasanKriteria:
                     "Terdapat bukti pelaksanaan Pedoman GCG dalam operasional perusahaan.",
-                  unsurPemenuhan: "1. Adanya dokumentasi pelaksanaan GCG dalam rapat-rapat organ perusahaan 2. Adanya laporan kepatuhan GCG 3. Adanya sosialisasi dan training GCG",
+                  unsurPemenuhan:
+                    "1. Adanya dokumentasi pelaksanaan GCG dalam rapat-rapat organ perusahaan 2. Adanya laporan kepatuhan GCG 3. Adanya sosialisasi dan training GCG",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -372,14 +377,16 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   status: "Ada",
                   rekomendasi: "Pertahankan",
                   sumberDokumen: "Notulen Rapat, Laporan Kepatuhan",
-                  keteranganDokumen: "Pelaksanaan GCG terdokumentasi dengan baik",
+                  keteranganDokumen:
+                    "Pelaksanaan GCG terdokumentasi dengan baik",
                 },
                 {
                   id: "2.1.2",
                   no: "(2)",
                   penjelasanKriteria:
                     "Pelaksanaan GCG dipantau dan dievaluasi secara berkala.",
-                  unsurPemenuhan: "1. Adanya mekanisme monitoring dan evaluasi pelaksanaan GCG 2. Adanya laporan evaluasi berkala 3. Adanya tindak lanjut dari hasil evaluasi",
+                  unsurPemenuhan:
+                    "1. Adanya mekanisme monitoring dan evaluasi pelaksanaan GCG 2. Adanya laporan evaluasi berkala 3. Adanya tindak lanjut dari hasil evaluasi",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -399,7 +406,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   no: "(3)",
                   penjelasanKriteria:
                     "Pelaksanaan GCG dilaporkan kepada organ pengawas secara berkala.",
-                  unsurPemenuhan: "1. Adanya laporan berkala pelaksanaan GCG kepada Dewan Komisaris 2. Adanya notulen rapat yang membahas laporan GCG 3. Adanya tindak lanjut dari rekomendasi organ pengawas",
+                  unsurPemenuhan:
+                    "1. Adanya laporan berkala pelaksanaan GCG kepada Dewan Komisaris 2. Adanya notulen rapat yang membahas laporan GCG 3. Adanya tindak lanjut dari rekomendasi organ pengawas",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -419,7 +427,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   no: "(4)",
                   penjelasanKriteria:
                     "Pelaksanaan GCG dievaluasi dan dimutakhirkan sesuai kebutuhan.",
-                  unsurPemenuhan: "1. Adanya evaluasi berkala efektivitas pelaksanaan GCG 2. Adanya pemutakhiran prosedur pelaksanaan GCG 3. Adanya sosialisasi perubahan kepada seluruh karyawan",
+                  unsurPemenuhan:
+                    "1. Adanya evaluasi berkala efektivitas pelaksanaan GCG 2. Adanya pemutakhiran prosedur pelaksanaan GCG 3. Adanya sosialisasi perubahan kepada seluruh karyawan",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -461,7 +470,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   no: "(1)",
                   penjelasanKriteria:
                     "Terdapat bukti pelaksanaan Pedoman Perilaku dalam operasional perusahaan.",
-                  unsurPemenuhan: "1. Adanya dokumentasi pelaksanaan Code of Conduct dalam operasional 2. Adanya laporan kepatuhan perilaku 3. Adanya sosialisasi dan training Code of Conduct",
+                  unsurPemenuhan:
+                    "1. Adanya dokumentasi pelaksanaan Code of Conduct dalam operasional 2. Adanya laporan kepatuhan perilaku 3. Adanya sosialisasi dan training Code of Conduct",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -482,14 +492,16 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   status: "Ada",
                   rekomendasi: "Pertahankan",
                   sumberDokumen: "Notulen Rapat, Laporan Kepatuhan",
-                  keteranganDokumen: "Pelaksanaan Code of Conduct terdokumentasi dengan baik",
+                  keteranganDokumen:
+                    "Pelaksanaan Code of Conduct terdokumentasi dengan baik",
                 },
                 {
                   id: "2.2.2",
                   no: "(2)",
                   penjelasanKriteria:
                     "Pelaksanaan Code of Conduct dipantau dan dievaluasi secara berkala.",
-                  unsurPemenuhan: "1. Adanya mekanisme monitoring dan evaluasi pelaksanaan Code of Conduct 2. Adanya laporan evaluasi berkala 3. Adanya tindak lanjut dari hasil evaluasi",
+                  unsurPemenuhan:
+                    "1. Adanya mekanisme monitoring dan evaluasi pelaksanaan Code of Conduct 2. Adanya laporan evaluasi berkala 3. Adanya tindak lanjut dari hasil evaluasi",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -509,7 +521,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   no: "(3)",
                   penjelasanKriteria:
                     "Pelaksanaan Code of Conduct dilaporkan kepada organ pengawas secara berkala.",
-                  unsurPemenuhan: "1. Adanya laporan berkala pelaksanaan Code of Conduct kepada Dewan Komisaris 2. Adanya notulen rapat yang membahas laporan perilaku 3. Adanya tindak lanjut dari rekomendasi organ pengawas",
+                  unsurPemenuhan:
+                    "1. Adanya laporan berkala pelaksanaan Code of Conduct kepada Dewan Komisaris 2. Adanya notulen rapat yang membahas laporan perilaku 3. Adanya tindak lanjut dari rekomendasi organ pengawas",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -529,7 +542,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   no: "(4)",
                   penjelasanKriteria:
                     "Pelaksanaan Code of Conduct dievaluasi dan dimutakhirkan sesuai kebutuhan.",
-                  unsurPemenuhan: "1. Adanya evaluasi berkala efektivitas pelaksanaan Code of Conduct 2. Adanya pemutakhiran prosedur pelaksanaan Code of Conduct 3. Adanya sosialisasi perubahan kepada seluruh karyawan",
+                  unsurPemenuhan:
+                    "1. Adanya evaluasi berkala efektivitas pelaksanaan Code of Conduct 2. Adanya pemutakhiran prosedur pelaksanaan Code of Conduct 3. Adanya sosialisasi perubahan kepada seluruh karyawan",
                   bobot: "",
                   capaianSub: "",
                   capaianTotal: "1",
@@ -559,11 +573,11 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
       const gcgCodeItem = tableData[0]?.children?.[0];
       if (gcgCodeItem) {
         const skorIndikator = getSumOfChildParameters(gcgCodeItem);
-        updateScore('komitmen_gcg_code', skorIndikator);
-        
+        updateScore("komitmen_gcg_code", skorIndikator);
+
         // Update bobot for the same item
         if (gcgCodeItem.bobot) {
-          updateBobot('komitmen_gcg_code', gcgCodeItem.bobot);
+          updateBobot("komitmen_gcg_code", gcgCodeItem.bobot);
         }
       }
 
@@ -571,11 +585,11 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
       const pelaksanaanItem = tableData[0]?.children?.[1];
       if (pelaksanaanItem) {
         const skorIndikator = getSumOfChildParameters(pelaksanaanItem);
-        updateScore('komitmen_pelaksanaan', skorIndikator);
-        
+        updateScore("komitmen_pelaksanaan", skorIndikator);
+
         // Update bobot for the same item
         if (pelaksanaanItem.bobot) {
-          updateBobot('komitmen_pelaksanaan', pelaksanaanItem.bobot);
+          updateBobot("komitmen_pelaksanaan", pelaksanaanItem.bobot);
         }
       }
     };
@@ -660,11 +674,16 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
       return items.map((item) => {
         if (item.id === itemId) {
           // Jika item memiliki skorParameter numerik, sinkronkan agar perhitungan turunannya (sum & persen) ikut berubah
-          const currentSkorParamIsNumeric = item.skorParameter !== undefined && item.skorParameter !== "" && !isNaN(parseFloat(item.skorParameter));
+          const currentSkorParamIsNumeric =
+            item.skorParameter !== undefined &&
+            item.skorParameter !== "" &&
+            !isNaN(parseFloat(item.skorParameter));
           return {
             ...item,
             bobot: formatted,
-            skorParameter: currentSkorParamIsNumeric ? formatted : item.skorParameter,
+            skorParameter: currentSkorParamIsNumeric
+              ? formatted
+              : item.skorParameter,
           };
         }
         if (item.children) {
@@ -684,7 +703,11 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
         const updatedChildren = recalcSkorParameters(item.children);
 
         // Jika item memiliki bobot dan semua anak adalah leaf dengan capaianTotal, distribusikan bobot secara rata
-        const allLeafWithCapaian = updatedChildren.length > 0 && updatedChildren.every((ch: any) => !ch.children || ch.children.length === 0);
+        const allLeafWithCapaian =
+          updatedChildren.length > 0 &&
+          updatedChildren.every(
+            (ch: any) => !ch.children || ch.children.length === 0
+          );
         if (item.bobot && allLeafWithCapaian) {
           const bobot = parseFloat(item.bobot);
           const n = updatedChildren.length;
@@ -695,8 +718,14 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
               sum += (bobot / n) * capaian;
             }
           }
-          const newSkorParameter = isNaN(sum) ? item.skorParameter : sum.toFixed(3);
-          return { ...item, children: updatedChildren, skorParameter: newSkorParameter };
+          const newSkorParameter = isNaN(sum)
+            ? item.skorParameter
+            : sum.toFixed(3);
+          return {
+            ...item,
+            children: updatedChildren,
+            skorParameter: newSkorParameter,
+          };
         }
 
         return { ...item, children: updatedChildren };
@@ -741,37 +770,36 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
 
   const formatText = (text: string): string => {
     if (!text) return "";
-    
+
     // Check if text contains numbered patterns like "1.", "2.", "3." etc. or alphabetical like "a.", "b.", "c." etc.
     const hasNumberedPattern = /\d+\.|[a-z]\./.test(text);
-    
+
     if (!hasNumberedPattern) {
       // If no numbered patterns, return text as is
       return text;
     }
-    
+
     // If has numbered patterns, apply numbered formatting
     const parts = text.split(/(\d+\.|[a-z]\.)/);
-    
+
     if (parts.length <= 1) return text;
-    
+
     let formatted = "";
     for (let i = 1; i < parts.length; i += 2) {
       if (parts[i] && parts[i + 1]) {
         formatted += `${parts[i]}\n${parts[i + 1].trim()}\n\n`;
       }
     }
-    
+
     return formatted.trim();
   };
 
-
   const getSumOfChildParameters = (parentNode: any): string => {
     if (!parentNode || !parentNode.children) return "-";
-    
+
     let sum = 0;
     let hasValidValues = false;
-    
+
     for (const child of parentNode.children) {
       if (child.skorParameter && child.skorParameter !== "") {
         const value = parseFloat(child.skorParameter);
@@ -781,9 +809,9 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
         }
       }
     }
-    
+
     if (!hasValidValues) return "-";
-    
+
     return sum.toFixed(3);
   };
 
@@ -812,42 +840,41 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
 
   const computeCapaianPersen = (item: any): string => {
     if (!item.skorParameter || !item.bobot) return "-";
-    
+
     const parameter = parseFloat(item.skorParameter);
     const bobot = parseFloat(item.bobot);
-    
+
     if (isNaN(parameter) || isNaN(bobot) || bobot === 0) return "-";
-    
+
     const percentage = (parameter / bobot) * 100;
     return `${percentage.toFixed(1)}%`;
   };
 
   const computeCapaianPersenIndikator = (item: any): string => {
     if (!item.bobot) return "-";
-    
+
     // For the parent row, the Indikator should equal the Bobot to get 100%
     const indikator = parseFloat(item.bobot);
     const bobot = parseFloat(item.bobot);
-    
+
     if (isNaN(indikator) || isNaN(bobot) || bobot === 0) return "-";
-    
+
     const percentage = (indikator / bobot) * 100;
     return `${percentage.toFixed(1)}%`;
   };
 
-
   const computeCapaianPersenMainItem = (item: any): string => {
     if (!item.bobot) return "-";
-    
+
     // For item "I", calculate Aspek from sum of child Indikators
     const aspekValue = getSumOfChildIndikators(item);
     if (aspekValue === "-") return "-";
-    
+
     const aspek = parseFloat(aspekValue);
     const bobot = parseFloat(item.bobot);
-    
+
     if (isNaN(aspek) || isNaN(bobot) || bobot === 0) return "-";
-    
+
     const percentage = (aspek / bobot) * 100;
     return `${percentage.toFixed(1)}%`;
   };
@@ -1121,7 +1148,7 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                     : "text-sm text-slate-500"
                 }`}
               >
-              {item.no}
+                {item.no}
               </span>
             </div>
           </td>
@@ -1158,7 +1185,9 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                   className="px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   {/* Opsi nilai saat ini (agar tetap tampil meski tidak ada di daftar) */}
-                  <option value={Number(item.bobot).toFixed(3)}>{parseFloat(Number(item.bobot).toFixed(3))}</option>
+                  <option value={Number(item.bobot).toFixed(3)}>
+                    {parseFloat(Number(item.bobot).toFixed(3))}
+                  </option>
                   {/* Opsi standar */}
                   <option value={Number(0.5).toFixed(3)}>0.5</option>
                   <option value={Number(0.25).toFixed(3)}>0.25</option>
@@ -1169,7 +1198,12 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                 "-"
               )}
               {(item.id === "1" || item.id === "2") && (
-                <span className="text-blue-500" title="Terhubung dengan halaman Indikator">🔗</span>
+                <span
+                  className="text-blue-500"
+                  title="Terhubung dengan halaman Indikator"
+                >
+                  🔗
+                </span>
               )}
             </div>
           </td>
@@ -1182,7 +1216,9 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                 type="number"
                 step="0.001"
                 value={item.capaianTotal || ""}
-                onChange={(e) => handleCapaianTotalChange(item.id, e.target.value)}
+                onChange={(e) =>
+                  handleCapaianTotalChange(item.id, e.target.value)
+                }
                 className="w-20 px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center"
               />
             ) : (
@@ -1195,17 +1231,28 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
             <div className="flex items-center justify-center space-x-1">
               <span>
-                {item.skorIndikator && item.skorIndikator.startsWith("=Capaian FUK & Prm kategori Total bagian")
+                {item.skorIndikator &&
+                item.skorIndikator.startsWith(
+                  "=Capaian FUK & Prm kategori Total bagian"
+                )
                   ? getSumOfChildParameters(item)
                   : item.skorIndikator || "-"}
               </span>
-              {item.skorIndikator && item.skorIndikator.startsWith("=Capaian FUK & Prm kategori Total bagian") && (
-                <span className="text-blue-500" title="Terhubung dengan halaman Indikator">🔗</span>
-              )}
+              {item.skorIndikator &&
+                item.skorIndikator.startsWith(
+                  "=Capaian FUK & Prm kategori Total bagian"
+                ) && (
+                  <span
+                    className="text-blue-500"
+                    title="Terhubung dengan halaman Indikator"
+                  >
+                    🔗
+                  </span>
+                )}
             </div>
           </td>
           <td className="px-3 py-3 text-sm text-center border-r border-gray-200">
-            {item.id === "I" 
+            {item.id === "I"
               ? getSumOfChildIndikators(item)
               : item.skorAspek || "-"}
           </td>
@@ -1263,8 +1310,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
                 className="px-2 py-1 text-xs border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">Pilih Status</option>
-                <option value="Ada">Ada</option>
-                <option value="Tidak Ada">Tidak Ada</option>
+                <option value="Approve">Ada</option>
+                <option value="Decline">Tidak Ada</option>
               </select>
             ) : (
               <span
@@ -1322,7 +1369,8 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
         </p>
         <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
           <p className="text-blue-700 text-sm">
-            🔗 <strong>Data Terhubung:</strong> Perubahan skor indikator dan bobot akan otomatis terupdate di halaman Indikator
+            🔗 <strong>Data Terhubung:</strong> Perubahan skor indikator dan
+            bobot akan otomatis terupdate di halaman Indikator
           </p>
         </div>
       </div>
@@ -1425,7 +1473,10 @@ const KomitmenPage: React.FC<KomitmenPageProps> = ({ onBack }) => {
           <p>• Format file: PDF, DOC, XLS, Images, Text (max 10MB)</p>
           <p>• Data sesuai dengan struktur penilaian governance</p>
           <p>• Format nomor: I → 1 → 1 → (1), (2), (3), (4)</p>
-          <p>• 🔗 Skor Indikator dan Bobot terhubung dengan halaman Indikator secara real-time</p>
+          <p>
+            • 🔗 Skor Indikator dan Bobot terhubung dengan halaman Indikator
+            secara real-time
+          </p>
           <p>• Perubahan data akan otomatis terupdate di halaman terkait</p>
         </div>
       </div>
