@@ -42,6 +42,47 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
     return result;
   };
 
+  const divisions = [
+    "BOD-1",
+    "KSPI",
+    "SETPER",
+    "AGA",
+    "KEU",
+    "VOP",
+    "REN",
+    "MHC",
+    "HUKUM",
+    "MR",
+  ];
+
+  // Sementara: sumber data progress dokumen per divisi (akan dihubungkan ke aspek nanti)
+  const divisionProgress: Record<string, { uploaded: number; total: number }> =
+    {
+      "BOD-1": { uploaded: 0, total: 0 },
+      KSPI: { uploaded: 0, total: 0 },
+      SETPER: { uploaded: 0, total: 0 },
+      AGA: { uploaded: 0, total: 0 },
+      KEU: { uploaded: 0, total: 0 },
+      VOP: { uploaded: 0, total: 0 },
+      REN: { uploaded: 0, total: 0 },
+      MHC: { uploaded: 0, total: 0 },
+      HUKUM: { uploaded: 0, total: 0 },
+      MR: { uploaded: 0, total: 0 },
+    };
+
+  const getDivisionPercent = (name: string): number => {
+    const d = divisionProgress[name];
+    if (!d || d.total === 0) return 0;
+    return Math.round((d.uploaded / d.total) * 100);
+  };
+
+  const getPercentColor = (percent: number): string => {
+    if (percent === 100) return "bg-green-100 text-green-700";
+    if (percent === 50) return "bg-yellow-100 text-yellow-700";
+    if (percent < 50) return "bg-red-100 text-red-700";
+    return "bg-blue-100 text-blue-700"; // < 100
+  };
+
   const governanceCards = [
     {
       id: "komitmen",
@@ -139,7 +180,7 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Header */}
         <div className="bg-blue-600 text-white p-4 border-b border-gray-200">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-4 gap-4">
             <div className="text-left font-bold text-sm uppercase">
               PENJELASAN KRITERIA
             </div>
@@ -153,6 +194,9 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
                 <div className="text-xs font-bold">CAPAIAN %</div>
               </div>
             </div>
+            <div className="text-center font-bold text-sm uppercase">
+              DOKUMEN
+            </div>
           </div>
         </div>
 
@@ -164,7 +208,7 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
               className="bg-white border border-gray-200 rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors shadow-sm"
               onClick={() => onCardClick(card.id)}
             >
-              <div className="grid grid-cols-3 gap-4 items-center">
+              <div className="grid grid-cols-4 gap-4 items-center">
                 {/* Left Column - Penjelasan Kriteria */}
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-blue-100 rounded flex items-center justify-center text-blue-600 font-bold text-sm flex-shrink-0">
@@ -198,6 +242,55 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
                     <div className="text-2xl font-bold text-blue-600">
                       {card.achievement.toFixed(0)}%
                     </div>
+                  </div>
+                </div>
+
+                {/* New Rightmost Column - Dokumen (cards per division) */}
+                <div className="text-center">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-3">
+                    {divisions.map((d) => {
+                      const percent = getDivisionPercent(d);
+                      const data = divisionProgress[d] || {
+                        uploaded: 0,
+                        total: 0,
+                      };
+                      return (
+                        <div
+                          key={d}
+                          className="rounded-md border border-gray-200 p-2.5 text-xs bg-white hover:bg-gray-50 text-left"
+                        >
+                          <div className="flex items-center justify-between mb-1.5">
+                            <span
+                              className="font-semibold text-gray-700 pr-2 break-words leading-tight flex-1"
+                              title={d}
+                            >
+                              {d}
+                            </span>
+                            <span
+                              className={`px-1.5 py-0.5 rounded ${getPercentColor(
+                                percent
+                              )} shrink-0`}
+                            >
+                              {data.uploaded}/{data.total}
+                            </span>
+                          </div>
+                          <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden mt-1">
+                            <div
+                              className={`h-full ${
+                                percent === 100
+                                  ? "bg-green-500"
+                                  : percent === 50
+                                  ? "bg-yellow-400"
+                                  : percent < 50
+                                  ? "bg-red-500"
+                                  : "bg-blue-500"
+                              }`}
+                              style={{ width: `${percent}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
