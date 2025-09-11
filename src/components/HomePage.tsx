@@ -113,6 +113,28 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
 
   return (
     <div className="max-w-6xl mx-auto">
+      {/* Ringkasan Hasil Penilaian Governance Assessment 2025 */}
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+        <div className="bg-blue-600 text-white px-4 py-3">
+          <h2 className="font-semibold">
+            Hasil Penilaian Atas Penerapan Good Corporate Governance Tahun 2025
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4">
+          <div className="rounded-lg border border-gray-200 p-4 text-center">
+            <div className="text-sm text-gray-500">Total score</div>
+            <div className="text-3xl font-bold text-blue-600">0.00</div>
+          </div>
+          <div className="rounded-lg border border-gray-200 p-4 text-center">
+            <div className="text-sm text-gray-500">Capaian</div>
+            <div className="text-3xl font-bold text-blue-600">0%</div>
+          </div>
+          <div className="rounded-lg border border-gray-200 p-4 text-center">
+            <div className="text-sm text-gray-500">Predikat</div>
+            <div className="text-3xl font-bold text-blue-600">-</div>
+          </div>
+        </div>
+      </div>
       {/* Main Content Card */}
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Header */}
@@ -196,151 +218,57 @@ export default HomePage;
 const DivisiSection: React.FC = () => {
   type DivisionRow = {
     name: string;
-    jumlah: number;
-    proses: number;
-    selesai: number;
-    belumTindakLanjut: number;
-    selesaiBerkelanjutan: number;
-    catatan: { ok: number; note: number; reject: number };
-    overdue: number;
-    progress: number; // 0-100
+    totalRequirements: number; // Jumlah Persyaratan Dokumen
+    uploaded: number; // Dokumen Terupload
+    pending: number; // Dokumen Pending
+    progress: number; // Progress (%)
   };
 
   const rows: DivisionRow[] = [
     {
       name: "BOD-1",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
+      totalRequirements: 0,
+      uploaded: 0,
+      pending: 0,
       progress: 0,
     },
     {
       name: "KSPI",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
+      totalRequirements: 0,
+      uploaded: 0,
+      pending: 0,
       progress: 0,
     },
     {
       name: "SETPER",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
+      totalRequirements: 0,
+      uploaded: 0,
+      pending: 0,
       progress: 0,
     },
-    {
-      name: "AGA",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
-      progress: 0,
-    },
-    {
-      name: "KEU",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
-      progress: 0,
-    },
-    {
-      name: "VOP",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
-      progress: 0,
-    },
-    {
-      name: "REN",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
-      progress: 0,
-    },
-    {
-      name: "MHC",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
-      progress: 0,
-    },
+    { name: "AGA", totalRequirements: 0, uploaded: 0, pending: 0, progress: 0 },
+    { name: "KEU", totalRequirements: 0, uploaded: 0, pending: 0, progress: 0 },
+    { name: "VOP", totalRequirements: 0, uploaded: 0, pending: 0, progress: 0 },
+    { name: "REN", totalRequirements: 0, uploaded: 0, pending: 0, progress: 0 },
+    { name: "MHC", totalRequirements: 0, uploaded: 0, pending: 0, progress: 0 },
     {
       name: "HUKUM",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
+      totalRequirements: 0,
+      uploaded: 0,
+      pending: 0,
       progress: 0,
     },
-    {
-      name: "MR",
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
-      progress: 0,
-    },
+    { name: "MR", totalRequirements: 0, uploaded: 0, pending: 0, progress: 0 },
   ];
 
   const totals = rows.reduce(
     (acc, r) => {
-      acc.jumlah += r.jumlah;
-      acc.proses += r.proses;
-      acc.selesai += r.selesai;
-      acc.belumTindakLanjut += r.belumTindakLanjut;
-      acc.selesaiBerkelanjutan += r.selesaiBerkelanjutan;
-      acc.catatan.ok += r.catatan.ok;
-      acc.catatan.note += r.catatan.note;
-      acc.catatan.reject += r.catatan.reject;
-      acc.overdue += r.overdue;
+      acc.totalRequirements += r.totalRequirements;
+      acc.uploaded += r.uploaded;
+      acc.pending += r.pending;
       return acc;
     },
-    {
-      jumlah: 0,
-      proses: 0,
-      selesai: 0,
-      belumTindakLanjut: 0,
-      selesaiBerkelanjutan: 0,
-      catatan: { ok: 0, note: 0, reject: 0 },
-      overdue: 0,
-    }
+    { totalRequirements: 0, uploaded: 0, pending: 0 }
   );
 
   const ProgressBar: React.FC<{ value: number }> = ({ value }) => (
@@ -385,9 +313,11 @@ const DivisiSection: React.FC = () => {
     <div className="bg-white rounded-lg shadow-lg overflow-hidden mt-8">
       {/* Header */}
       <div className="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
-        <h3 className="font-semibold">AOI GCG 2024</h3>
+        <h3 className="font-semibold">Status Pemenuhan Dokumen Persyaratan</h3>
         <div className="flex items-center space-x-2 opacity-80 text-sm">
-          <span className="hidden sm:inline">Ringkasan per divisi</span>
+          <button className="inline-flex items-center px-3 py-1.5 rounded-md bg-white/20 hover:bg-white/25 text-white text-xs font-medium transition">
+            Divisi • Pemenuhan Dokumen
+          </button>
         </div>
       </div>
 
@@ -396,48 +326,36 @@ const DivisiSection: React.FC = () => {
         <table className="min-w-full text-sm">
           <thead>
             <tr className="bg-blue-600 bg-opacity-5 text-blue-900">
-              <th className="text-left font-semibold px-4 py-3">NAMA DIVISI</th>
-              <th className="font-semibold px-4 py-3">JUMLAH</th>
-              <th className="font-semibold px-4 py-3">PROSES</th>
-              <th className="font-semibold px-4 py-3">SELESAI</th>
-              <th className="font-semibold px-4 py-3">BELUM DITINDAKLANJUTI</th>
-              <th className="font-semibold px-4 py-3">SELESAI BERKELANJUTAN</th>
-              <th className="font-semibold px-4 py-3">CATATAN DIREKSI</th>
-              <th className="font-semibold px-4 py-3">OVERDUE</th>
-              <th className="font-semibold px-4 py-3">PROGRESS</th>
+              <th className="font-semibold px-4 py-3 w-16 text-center">No</th>
+              <th className="text-left font-semibold px-4 py-3">
+                PIC/Nama Divisi
+              </th>
+              <th className="font-semibold px-4 py-3 text-center">
+                Jumlah Persyaratan Dokumen
+              </th>
+              <th className="font-semibold px-4 py-3 text-center">
+                Dokumen Terupload
+              </th>
+              <th className="font-semibold px-4 py-3 text-center">
+                Dokumen Pending
+              </th>
+              <th className="font-semibold px-4 py-3 text-center">
+                Progress (%)
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            {rows.map((r) => (
+            {rows.map((r, idx) => (
               <tr key={r.name} className="hover:bg-gray-50">
+                <td className="px-4 py-3 text-center">{idx + 1}</td>
                 <td className="px-4 py-3 text-blue-700 font-semibold">
                   {r.name}
                 </td>
-                <td className="px-4 py-3 text-center">{r.jumlah}</td>
-                <td className="px-4 py-3 text-center">{r.proses}</td>
-                <td className="px-4 py-3 text-center">{r.selesai}</td>
-                <td className="px-4 py-3 text-center">{r.belumTindakLanjut}</td>
-                <td className="px-4 py-3 text-center">
-                  {r.selesaiBerkelanjutan}
-                </td>
+                <td className="px-4 py-3 text-center">{r.totalRequirements}</td>
+                <td className="px-4 py-3 text-center">{r.uploaded}</td>
+                <td className="px-4 py-3 text-center">{r.pending}</td>
                 <td className="px-4 py-3">
-                  <div className="flex items-center space-x-2">
-                    <Badge color="green" value={r.catatan.ok} label="✓" />
-                    <Badge color="yellow" value={r.catatan.note} label="⏱" />
-                    <Badge color="red" value={r.catatan.reject} label="✖" />
-                  </div>
-                </td>
-                <td className="px-4 py-3 text-center">
-                  {r.overdue > 0 ? (
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-500 text-white text-xs font-semibold">
-                      {r.overdue}
-                    </span>
-                  ) : (
-                    <span className="text-gray-400">-</span>
-                  )}
-                </td>
-                <td className="px-4 py-3 text-right">
-                  <div className="flex justify-end">
+                  <div className="flex justify-center">
                     <ProgressBar value={r.progress} />
                   </div>
                 </td>
@@ -446,27 +364,17 @@ const DivisiSection: React.FC = () => {
 
             {/* Totals Row */}
             <tr className="bg-blue-50 font-semibold text-blue-900">
-              <td className="px-4 py-3">JUMLAH</td>
-              <td className="px-4 py-3 text-center">{totals.jumlah}</td>
-              <td className="px-4 py-3 text-center">{totals.proses}</td>
-              <td className="px-4 py-3 text-center">{totals.selesai}</td>
-              <td className="px-4 py-3 text-center">
-                {totals.belumTindakLanjut}
+              <td className="px-4 py-3 text-center" colSpan={2}>
+                JUMLAH
               </td>
               <td className="px-4 py-3 text-center">
-                {totals.selesaiBerkelanjutan}
+                {totals.totalRequirements}
               </td>
+              <td className="px-4 py-3 text-center">{totals.uploaded}</td>
+              <td className="px-4 py-3 text-center">{totals.pending}</td>
               <td className="px-4 py-3">
-                <div className="flex items-center space-x-2">
-                  <Badge color="green" value={totals.catatan.ok} label="✓" />
-                  <Badge color="yellow" value={totals.catatan.note} label="⏱" />
-                  <Badge color="red" value={totals.catatan.reject} label="✖" />
-                </div>
-              </td>
-              <td className="px-4 py-3 text-center">{totals.overdue}</td>
-              <td className="px-4 py-3 text-right">
-                <div className="flex justify-end">
-                  <ProgressBar value={38} />
+                <div className="flex justify-center">
+                  <ProgressBar value={0} />
                 </div>
               </td>
             </tr>

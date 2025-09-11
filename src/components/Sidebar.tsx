@@ -68,10 +68,10 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onPageChange }) => {
           </div>
           <div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              GCG 2024
+              GovAss
             </h1>
             <p className="text-xs text-slate-400 leading-tight">
-              Good Corporate Governance
+              (Governance Assessment)
             </p>
           </div>
         </div>
