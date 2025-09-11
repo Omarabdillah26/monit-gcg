@@ -13,6 +13,35 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
+  // Fungsi untuk mengkonversi angka menjadi angka Romawi
+  const toRoman = (num: number): string => {
+    const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    const symbols = [
+      "M",
+      "CM",
+      "D",
+      "CD",
+      "C",
+      "XC",
+      "L",
+      "XL",
+      "X",
+      "IX",
+      "V",
+      "IV",
+      "I",
+    ];
+    let result = "";
+
+    for (let i = 0; i < values.length; i++) {
+      while (num >= values[i]) {
+        result += symbols[i];
+        num -= values[i];
+      }
+    }
+    return result;
+  };
+
   const governanceCards = [
     {
       id: "komitmen",
@@ -117,7 +146,7 @@ const HomePage: React.FC<HomePageProps> = ({ onCardClick }) => {
                 {/* Left Column - Penjelasan Kriteria */}
                 <div className="flex items-start space-x-3">
                   <div className="w-6 h-6 bg-blue-100 rounded flex items-center justify-center text-blue-600 font-bold text-sm flex-shrink-0">
-                    {String.fromCharCode(73 + index)}.
+                    {toRoman(index + 1)}.
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-gray-800 text-sm mb-1">

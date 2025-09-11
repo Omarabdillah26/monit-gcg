@@ -94,7 +94,50 @@ const Dashboard: React.FC<DashboardProps> = ({ username }) => {
         </div>
 
         {/* Content */}
-        <div className="p-6">{renderCurrentPage()}</div>
+        <div className="p-6">
+          {/* Total Aspek Widget - hanya tampil di halaman home */}
+          {currentPage === "home" && (
+            <div className="mb-6">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-lg p-6 text-white">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-2xl font-bold mb-2">
+                      Total Aspek Tata Kelola
+                    </h2>
+                    <p className="text-blue-100">
+                      Ringkasan keseluruhan capaian GCG
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-4xl font-bold">7</div>
+                    <div className="text-blue-100 text-sm">Aspek Utama</div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
+                  <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div className="text-2xl font-bold">49.00</div>
+                    <div className="text-blue-100 text-sm">Total Bobot</div>
+                  </div>
+                  <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div className="text-2xl font-bold">49.00</div>
+                    <div className="text-blue-100 text-sm">Total Skor</div>
+                  </div>
+                  <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div className="text-2xl font-bold">100%</div>
+                    <div className="text-blue-100 text-sm">Capaian %</div>
+                  </div>
+                  <div className="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div className="text-2xl font-bold">A</div>
+                    <div className="text-blue-100 text-sm">Grade</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {renderCurrentPage()}
+        </div>
       </main>
     </div>
   );
