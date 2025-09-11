@@ -65,7 +65,8 @@ const Dashboard: React.FC<DashboardProps> = ({ username }) => {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-xl font-semibold text-gray-900">
-                Dashboard Good Corporate Governance
+                Hasil Penilaian Atas Penerapan Good Corporate Governance Tahun
+                2025.
               </h1>
               <p className="text-sm text-gray-600">
                 Selamat datang, {username}
